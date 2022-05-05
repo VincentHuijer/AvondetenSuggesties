@@ -2,24 +2,6 @@ import java.util.ArrayList;
 
 class Ingredienten {
     public Ingredienten(String naam, double gewicht, double vet, double koolhydraten, double eiwitten, boolean groente) {
-
-    /*     public void kip () {
-             double gewicht = 100;
-             double vet = 14;
-             double koolhydraten = 0;
-
-         }
-         public void pasta () {
-             double gewicht = 100;
-             double vet = 1.1;
-             double koolhydraten = 3.2;
-         }
-         public void wortel () {
-             double gewicht = 100;
-             double vet = 0.2;
-             double koolhydraten = 10;
-         }
-*/
         ArrayList<Ingredient> ingredienten = new ArrayList();
 
         ingredienten.add(new Ingredient("kip",100, 14, 0, 20, false));
@@ -39,10 +21,7 @@ class Ingredienten {
         ingredienten.add(new Ingredient("nierbonen",100, 1, 60, 24, true));
         ingredienten.add(new Ingredient("aardappel",100, 0, 19, 2, false));
         ingredienten.add(new Ingredient("boter", 100, 81, 0.1, 1, false));
-
-
     }
-
 }
 
 class Ingredient {
@@ -63,6 +42,8 @@ class Ingredient {
         this.eiwitten = eiwitten;
         this.groente = groente;
     }
+
+
 }
 
 

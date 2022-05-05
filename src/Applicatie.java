@@ -17,7 +17,7 @@ public class Applicatie {
      **/
     private ArrayList<Gerecht> gerechten = new ArrayList<>();
 
-
+    /**Alle gerechten met het type en de prijs (exclusief btw) **/
     public void gerechten() {
         //pasta
         gerechten.add(new PastaGerecht("Lasagne", "Pasta-gerecht", 1.23));
@@ -45,14 +45,15 @@ public class Applicatie {
         gerechten.add(new VegetarischGerecht("Hutspot", "Vegetarisch-gerecht", 1.24));
     }
 
-
+    /** De de applicatie kan suggesties geven voor avondeten door middel van vragen waar je trek in hebt **/
     public Applicatie() {
         gerechten();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Waar heeft u trek in? Voer een optie in met de getallen 1 tot en met 4.");
-        /**1. Laat de applicatie een suggestie geven voor avondeten doormiddel van een vraag waar je trek in hebt **/
         System.out.println("heeft u trek in 1. Pasta, 2. Rijst, 3. Deeg-recepten, 4. Vegetarisch");
-        String num = scanner.nextLine(); /** met num geef je het type gerecht aan(Pasta, Rijst, Deeg, Vegetarisch) **/
+
+        String num = scanner.nextLine(); // met num geef je het type gerecht aan(Pasta, Rijst, Deeg, Vegetarisch)
+        //1. pasta keuze
         if (num.equals("1")) {
             ArrayList<Gerecht> PastaGerechten = getGerechtenLijst("Pasta-gerecht");
             String opties = "";
@@ -66,7 +67,7 @@ public class Applicatie {
             System.out.printf("%s%n", PastaGerechten.get(number - 1));
         }
 
-
+        //2. rijst keuze
         if (num.equals("2")) {
             ArrayList<Gerecht> RijstGerechten = getGerechtenLijst("Rijst-gerecht");
             String opties = "";
@@ -79,6 +80,7 @@ public class Applicatie {
             Integer number = Integer.valueOf(rijstInput);
             System.out.printf("%s%n", RijstGerechten.get(number - 1));
         }
+        // 3. deeg keuze
         if (num.equals("3")) {
             ArrayList<Gerecht> DeegGerechten = getGerechtenLijst("Deeg-gerecht");
             String opties = "";
@@ -91,6 +93,8 @@ public class Applicatie {
             Integer number = Integer.valueOf(DeegInput);
             System.out.printf("%s%n", DeegGerechten.get(number - 1));
         }
+
+        // 4. vegetarisch keuze
         if (num.equals("4")) {
             ArrayList<Gerecht> VegetarischGerechten = getGerechtenLijst("Vegetarisch-gerecht");
             String opties = "";
@@ -105,7 +109,7 @@ public class Applicatie {
         }
 
     }
-
+        //Maakt de suggesties voor het avondeten dynamic. getGerechtenLijst stopt alle gerechten in de juiste locaties
     public ArrayList<Gerecht> getGerechtenLijst(String typeGerecht) {
         ArrayList<Gerecht> arrayToevoegen = new ArrayList<>();
         for (Gerecht gerecht : gerechten) {

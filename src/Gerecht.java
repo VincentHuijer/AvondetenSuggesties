@@ -23,7 +23,7 @@ class   Gerecht {
 
         return String.format("" +
                 "U koos voor %s van het type %s. \n" +
-                "dit gerecht zou rond de %.2f€ kosten on te bereiden.", getName(), getType(), getPrijs());
+                "dit gerecht zou rond de %.2f€ kosten om te bereiden.", getName(), getType(), getPrijs());
 
     }
 
