@@ -7,12 +7,21 @@ class VegetarischGerecht extends Gerecht {
     }
     /**Vegetarische gerechten zijn gezond en hebben daarom minder BTW belasting! **/
     @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
     public double getPrijs() {
         return prijs * 1.09;
     }
-
-
 }
+
 
 
 

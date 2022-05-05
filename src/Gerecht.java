@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-class Gerecht {
+class   Gerecht {
 
     public double prijs;
     public String name;

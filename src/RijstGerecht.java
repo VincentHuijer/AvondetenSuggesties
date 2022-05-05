@@ -5,9 +5,19 @@ class RijstGerecht extends Gerecht {
     }
 
     @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
     public double getPrijs() {
         return prijs * 1.21;
     }
-
-
 }
+
+
