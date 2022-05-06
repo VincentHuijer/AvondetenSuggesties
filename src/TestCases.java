@@ -53,4 +53,11 @@ class TestClass {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void testBTW(){
+        PastaGerecht pastaGerecht = new PastaGerecht("lasagne", "Pasta-gerecht", 1.23);
+
+    }
+
+
 }
