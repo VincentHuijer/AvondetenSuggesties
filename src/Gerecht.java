@@ -14,8 +14,6 @@ class Gerecht {
         this.prijs = prijs;
         this.type = type;
     }
-
-
     /**
      * Geeft een tekst terug met de naam, type en prijs inclusief BTW aan Applicatie
      **/
@@ -26,7 +24,6 @@ class Gerecht {
                 "dit gerecht zou rond de %.2f€ kosten om te bereiden.", getName(), getType(), getPrijs());
 
     }
-
 
     public double getPrijs() {
         return prijs;
@@ -39,8 +36,6 @@ class Gerecht {
     public String getType() {
         return type;
     }
-
-
 }
 
 

@@ -45,6 +45,7 @@ public class Applicatie {
         gerechten.add(new VegetarischGerecht("Hutspot", "Vegetarisch-gerecht", 1.24));
     }
 
+
     /** De de applicatie kan suggesties geven voor avondeten door middel van vragen waar je trek in hebt **/
     public Applicatie() {
         gerechten();

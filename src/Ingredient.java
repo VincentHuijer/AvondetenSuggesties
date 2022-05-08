@@ -16,7 +16,7 @@ import java.util.ArrayList;
     }
     }*/
 
-class Ingredient {
+public class Ingredient {
 
     private String naam;
     private double gewicht;
@@ -50,10 +50,10 @@ class Ingredient {
     public ArrayList<Ingredient> hutspost = new ArrayList<>();
 
 
+
     //naam van het gerecht, type gerecht(pasta/rijst/etc), prijs van gerecht
-    public Ingredient(String naam, double gewicht, double vet, double koolhydraten, double eiwitten, boolean groente) {
+     Ingredient(String naam, double vet, double koolhydraten, double eiwitten, boolean groente) {
         this.naam = naam;
-        this.gewicht = gewicht;
         this.vet = vet;
         this.koolhydraten = koolhydraten;
         this.eiwitten = eiwitten;
@@ -61,45 +61,44 @@ class Ingredient {
     }
 
 
-
-    Ingredient kip = new Ingredient("kip", 100, 14, 0, 20, false);
-    Ingredient pasta = new Ingredient("pasta", 100, 1.1, 3.2, 10, false);
-    Ingredient pastaSlierten = new Ingredient("pasta slierten", 100, 1.1, 3.2, 10, false);
-    Ingredient pastasaus = new Ingredient("pastasaus", 100, 61, 4.3, 2.2, false);
-    Ingredient wortel = new Ingredient("wortel", 100, 0.2, 10, 4, false);
-    Ingredient tomaat = new Ingredient("tomaat", 100, 0.2, 3.9, 3, true);
-    Ingredient tomatenpuree = new Ingredient("tomatenpuree", 100, 0.2, 3.9, 3, true);
-    Ingredient rijst = new Ingredient("rijst", 100, 0.3, 28, 10, false);
-    Ingredient rundGehakt = new Ingredient("rundGehakt", 100, 30, 28, 24, false);
-    Ingredient paprika = new Ingredient("paprika", 100, 0.3, 6, 1, true);
-    Ingredient champignons = new Ingredient("champignons", 100, 0.5, 5, 2.2, false);
-    Ingredient ui = new Ingredient("ui", 50, 0.1, 4, 1.1, true);
-    Ingredient gember = new Ingredient("gember", 100, 0.8, 18, 1.8, false);
-    Ingredient tarweBloem = new Ingredient("tarweBloem", 100, 1, 76, 10, false);
-    Ingredient spinazie = new Ingredient("spinazie", 100, 0.6, 0.5, 2, true);
-    Ingredient deeg = new Ingredient("deeg", 100, 39, 46, 7, false);
-    Ingredient bladerdeeg = new Ingredient("bladerdeeg", 100, 39, 46, 7, false);
-    Ingredient nierbonen = new Ingredient("nierbonen", 100, 1, 60, 24, true);
-    Ingredient aardappel = new Ingredient("aardappel", 100, 0, 19, 2, false);
-    Ingredient boter = new Ingredient("boter", 20, 20, 0.1, 0.3, false);
-    Ingredient mozarella = new Ingredient("mozarella", 100, 17, 3.1, 28, false);
-    Ingredient bleekselderij = new Ingredient("bleekselderij", 100, 17, 3.1, 28, true);
-    Ingredient spek = new Ingredient("spek", 100, 6, 1.5, 21, false);
-    Ingredient kaas = new Ingredient("kaas", 100, 17, 3.1, 28, false);
-    Ingredient vodka = new Ingredient("vodka", 100, 0, 0, 0, false);
-    Ingredient knoflook = new Ingredient("knoflook", 100, 0.1, 28, 6, false);
-    Ingredient zout = new Ingredient("zout", 5, 0, 0, 0, false);
-    Ingredient peper = new Ingredient("peper", 5, 0, 0, 0, false);
-    Ingredient ham = new Ingredient("ham", 100, 6, 1.5, 21, false);
-    Ingredient bouillon = new Ingredient("bouillon", 100, 14, 18, 17, false);
-    Ingredient courgette = new Ingredient("courgette", 100, 0.3, 3.1, 1.2, true);
-    Ingredient pompoen = new Ingredient("pompoen", 100, 0.1, 7, 1, false);
-    Ingredient sambal = new Ingredient("sambal", 5, 0.1, 1, 0.9, false);
-    Ingredient olijfolie = new Ingredient("olijfolie", 5, 5, 0, 0, false);
-    Ingredient ketjap = new Ingredient("ketjap", 5, 4, 0, 0, false);
-    Ingredient ei = new Ingredient("ei", 50, 5, 0.5, 13, false);
-    Ingredient sla = new Ingredient("sla", 100, 0.2, 2.9, 1.4, true);
-    Ingredient prei = new Ingredient("prei", 100, 0.3, 14, 1.5, true);
+    Ingredient kip = new Ingredient("kip", 14, 0, 20, false);
+    Ingredient pasta = new Ingredient("pasta", 1.1, 3.2, 10, false);
+    Ingredient pastaSlierten = new Ingredient("pasta slierten", 1.1, 3.2, 10, false);
+    Ingredient pastasaus = new Ingredient("pastasaus", 61, 4.3, 2.2, false);
+    Ingredient wortel = new Ingredient("wortel", 0.2, 10, 4, true);
+    Ingredient tomaat = new Ingredient("tomaat", 0.2, 3.9, 3, true);
+    Ingredient tomatenpuree = new Ingredient("tomatenpuree", 0.2, 3.9, 3, true);
+    Ingredient rijst = new Ingredient("rijst", 0.3, 28, 10, false);
+    Ingredient rundGehakt = new Ingredient("rundGehakt", 30, 28, 24, false);
+    Ingredient paprika = new Ingredient("paprika", 0.3, 6, 1, true);
+    Ingredient champignons = new Ingredient("champignons", 0.5, 5, 2.2, false);
+    Ingredient ui = new Ingredient("ui", 0.1, 4, 1.1, true);
+    Ingredient gember = new Ingredient("gember", 0.8, 18, 1.8, false);
+    Ingredient tarweBloem = new Ingredient("tarweBloem", 1, 76, 10, false);
+    Ingredient spinazie = new Ingredient("spinazie", 0.6, 0.5, 2, true);
+    Ingredient deeg = new Ingredient("deeg", 39, 46, 7, false);
+    Ingredient bladerdeeg = new Ingredient("bladerdeeg", 39, 46, 7, false);
+    Ingredient nierbonen = new Ingredient("nierbonen", 1, 60, 24, true);
+    Ingredient aardappel = new Ingredient("aardappel", 0, 19, 2, false);
+    Ingredient boter = new Ingredient("boter", 20, 0.1, 0.3, false);
+    Ingredient mozzarella = new Ingredient("mozzarella", 17, 3.1, 28, false);
+    Ingredient bleekselderij = new Ingredient("bleekselderij", 17, 3.1, 28, true);
+    Ingredient spek = new Ingredient("spek", 6, 1.5, 21, false);
+    Ingredient kaas = new Ingredient("kaas", 17, 3.1, 28, false);
+    Ingredient vodka = new Ingredient("vodka", 0, 0, 0, false);
+    Ingredient knoflook = new Ingredient("knoflook", 0.1, 28, 6, false);
+    Ingredient zout = new Ingredient("zout", 0, 0, 0, false);
+    Ingredient peper = new Ingredient("peper", 0, 0, 0, false);
+    Ingredient ham = new Ingredient("ham", 6, 1.5, 21, false);
+    Ingredient bouillon = new Ingredient("bouillon", 14, 18, 17, false);
+    Ingredient courgette = new Ingredient("courgette", 0.3, 3.1, 1.2, true);
+    Ingredient pompoen = new Ingredient("pompoen", 0.1, 7, 1, false);
+    Ingredient sambal = new Ingredient("sambal", 0.1, 1, 0.9, false);
+    Ingredient olijfolie = new Ingredient("olijfolie", 5, 0, 0, false);
+    Ingredient ketjap = new Ingredient("ketjap", 4, 0, 0, false);
+    Ingredient ei = new Ingredient("ei", 5, 0.5, 13, false);
+    Ingredient sla = new Ingredient("sla", 0.2, 2.9, 1.4, true);
+    Ingredient prei = new Ingredient("prei", 0.3, 14, 1.5, true);
 
 
     public void gerechtenSamenstellen() {
@@ -108,7 +107,7 @@ class Ingredient {
         lasagne.add(tomaat);
         lasagne.add(rundGehakt);
         lasagne.add(bleekselderij);
-        lasagne.add(mozarella);
+        lasagne.add(mozzarella);
         lasagne.add(kaas);
         lasagne.add(ui);
 
@@ -192,7 +191,7 @@ class Ingredient {
         pizza.add(tomaat);
         pizza.add(kaas);
         pizza.add(champignons);
-        pizza.add(mozarella);
+        pizza.add(mozzarella);
         pizza.add(peper);
         pizza.add(zout);
 
@@ -228,7 +227,7 @@ class Ingredient {
         capreseEmpanadas.add(boter);
         capreseEmpanadas.add(ei);
         capreseEmpanadas.add(tomaat);
-        capreseEmpanadas.add(mozarella);
+        capreseEmpanadas.add(mozzarella);
         capreseEmpanadas.add(peper);
         capreseEmpanadas.add(zout);
 
@@ -275,8 +274,8 @@ class Ingredient {
         hutspost.add(peper);
         hutspost.add(zout);
 
-    }
 
+    }
 
 
     public void GerechtenVoedingswaarde(ArrayList<Ingredient> ingredienten) {
@@ -290,6 +289,35 @@ class Ingredient {
             System.out.println(ingredient.naam);
         }
     }
+
+    public void gerechtenLijst(ArrayList<Ingredient> GerechtenLijst){
+        ArrayList<ArrayList> gerechtenlijst = new ArrayList<ArrayList>();
+        //pasta
+        gerechtenlijst.add(lasagne);
+        gerechtenlijst.add(penneAllaVodka);
+        gerechtenlijst.add(spaghetti);
+        gerechtenlijst.add(tagliatelle);
+        gerechtenlijst.add(macaroni);
+        //rijst
+        gerechtenlijst.add(risotto);
+        gerechtenlijst.add(kipSiam);
+        gerechtenlijst.add(bulgoli);
+        gerechtenlijst.add(nasi);
+        gerechtenlijst.add(kipTandoori);
+        //deeg
+        gerechtenlijst.add(pizza);
+        gerechtenlijst.add(spinazieTaart);
+        gerechtenlijst.add(burritos);
+        gerechtenlijst.add(quiche);
+        gerechtenlijst.add(capreseEmpanadas);
+        //vegetarisch
+        gerechtenlijst.add(salade);
+        gerechtenlijst.add(vegaTaco);
+        gerechtenlijst.add(stamppot);
+        gerechtenlijst.add(shakshuka);
+        gerechtenlijst.add(hutspost);
+    }
+
 }
 
 
