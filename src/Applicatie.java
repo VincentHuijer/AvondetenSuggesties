@@ -1,9 +1,5 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
-
-import static java.lang.Integer.*;
 
 class Main {
     public static void main(String[] args) {
@@ -50,65 +46,76 @@ public class Applicatie {
     public Applicatie() {
         gerechten();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Waar heeft u trek in? Voer een optie in met de getallen 1 tot en met 4.");
-        System.out.println("heeft u trek in 1. Pasta, 2. Rijst, 3. Deeg-recepten, 4. Vegetarisch");
+        System.out.println("Wat wilt u doen? voer een optie in met de getallen 1 tot en met 2.");
+        System.out.println("1. Geef mij een suggestie voor het avondeten");
+        System.out.println("2. pizza berekenen.");
+        String keuze = scanner.nextLine();
 
-        String num = scanner.nextLine(); // met num geef je het type gerecht aan(Pasta, Rijst, Deeg, Vegetarisch)
-        //1. pasta keuze
-        if (num.equals("1")) {
-            ArrayList<Gerecht> PastaGerechten = getGerechtenLijst("Pasta-gerecht");
-            String opties = "";
-            int teller = 0;
-            for (Gerecht gerecht : PastaGerechten) {
-                opties += (++teller + ". " + gerecht.getName() + " ");
-            }
-            System.out.println("[Pasta] Heeft u trek in " + opties);
-            String pastaInput = scanner.nextLine();
-            Integer number = Integer.valueOf(pastaInput);
-            System.out.printf("%s%n", PastaGerechten.get(number - 1));
-        }
+        if (keuze.equals("1")) {
+            System.out.println("Waar heeft u trek in? Voer een optie in met de getallen 1 tot en met 4.");
+            System.out.println("heeft u trek in 1. Pasta, 2. Rijst, 3. Deeg-recepten, 4. Vegetarisch");
 
-        //2. rijst keuze
-        if (num.equals("2")) {
-            ArrayList<Gerecht> RijstGerechten = getGerechtenLijst("Rijst-gerecht");
-            String opties = "";
-            int teller = 0;
-            for (Gerecht gerecht : RijstGerechten) {
-                opties += (++teller + ". " + gerecht.getName() + " ");
+            String num = scanner.nextLine(); // met num geef je het type gerecht aan(Pasta, Rijst, Deeg, Vegetarisch)
+            //1. pasta keuze
+            if (num.equals("1")) {
+                ArrayList<Gerecht> PastaGerechten = getGerechtenLijst("Pasta-gerecht");
+                String opties = "";
+                int teller = 0;
+                for (Gerecht gerecht : PastaGerechten) {
+                    opties += (++teller + ". " + gerecht.getName() + " ");
+                }
+                System.out.println("[Pasta] Heeft u trek in " + opties);
+                String pastaInput = scanner.nextLine();
+                Integer number = Integer.valueOf(pastaInput);
+                System.out.printf("%s%n", PastaGerechten.get(number - 1));
             }
-            System.out.println("[Rijst] Heeft u trek in " + opties);
-            String rijstInput = scanner.nextLine();
-            Integer number = Integer.valueOf(rijstInput);
-            System.out.printf("%s%n", RijstGerechten.get(number - 1));
-        }
-        // 3. deeg keuze
-        if (num.equals("3")) {
-            ArrayList<Gerecht> DeegGerechten = getGerechtenLijst("Deeg-gerecht");
-            String opties = "";
-            int teller = 0;
-            for (Gerecht gerecht : DeegGerechten) {
-                opties += (++teller + ". " + gerecht.getName() + " ");
-            }
-            System.out.println("[Deeg] Heeft u trek in " + opties);
-            String DeegInput = scanner.nextLine();
-            Integer number = Integer.valueOf(DeegInput);
-            System.out.printf("%s%n", DeegGerechten.get(number - 1));
-        }
 
-        // 4. vegetarisch keuze
-        if (num.equals("4")) {
-            ArrayList<Gerecht> VegetarischGerechten = getGerechtenLijst("Vegetarisch-gerecht");
-            String opties = "";
-            int teller = 0;
-            for (Gerecht gerecht : VegetarischGerechten) {
-                opties += (++teller + ". " + gerecht.getName() + " ");
+            //2. rijst keuze
+            if (num.equals("2")) {
+                ArrayList<Gerecht> RijstGerechten = getGerechtenLijst("Rijst-gerecht");
+                String opties = "";
+                int teller = 0;
+                for (Gerecht gerecht : RijstGerechten) {
+                    opties += (++teller + ". " + gerecht.getName() + " ");
+                }
+                System.out.println("[Rijst] Heeft u trek in " + opties);
+                String rijstInput = scanner.nextLine();
+                Integer number = Integer.valueOf(rijstInput);
+                System.out.printf("%s%n", RijstGerechten.get(number - 1));
             }
-            System.out.println("[Vegetarisch] Heeft u trek in " + opties);
-            int vegetarischInput = scanner.nextInt();
-            Integer number = Integer.valueOf(vegetarischInput);
-            System.out.printf("%s%n", VegetarischGerechten.get(number - 1));
-        }
+            // 3. deeg keuze
+            if (num.equals("3")) {
+                ArrayList<Gerecht> DeegGerechten = getGerechtenLijst("Deeg-gerecht");
+                String opties = "";
+                int teller = 0;
+                for (Gerecht gerecht : DeegGerechten) {
+                    opties += (++teller + ". " + gerecht.getName() + " ");
+                }
+                System.out.println("[Deeg] Heeft u trek in " + opties);
+                String DeegInput = scanner.nextLine();
+                Integer number = Integer.valueOf(DeegInput);
+                System.out.printf("%s%n", DeegGerechten.get(number - 1));
+            }
 
+            // 4. vegetarisch keuze
+            if (num.equals("4")) {
+                ArrayList<Gerecht> VegetarischGerechten = getGerechtenLijst("Vegetarisch-gerecht");
+                String opties = "";
+                int teller = 0;
+                for (Gerecht gerecht : VegetarischGerechten) {
+                    opties += (++teller + ". " + gerecht.getName() + " ");
+                }
+                System.out.println("[Vegetarisch] Heeft u trek in " + opties);
+                int vegetarischInput = scanner.nextInt();
+                Integer number = Integer.valueOf(vegetarischInput);
+                System.out.printf("%s%n", VegetarischGerechten.get(number - 1));
+            }
+
+        }
+        if (keuze.equals("2")){
+            new Pizzakeuzemenu();
+
+        }
     }
         //Maakt de suggesties voor het avondeten dynamic. getGerechtenLijst stopt alle gerechten in de juiste locaties
     public ArrayList<Gerecht> getGerechtenLijst(String typeGerecht) {
