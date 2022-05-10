@@ -11,9 +11,11 @@ public class Applicatie {
     /**
      * Gerechten worden toegevoegd aan de ArrayList en worden vervolgens verder verwerkt in PastaGerecht, RijstGerecht, etc.
      **/
-    private ArrayList<Gerecht> gerechten = new ArrayList<>();
+    private ArrayList<GerechtUitprinter> gerechten = new ArrayList<>();
 
-    /**Alle gerechten met het type en de prijs (exclusief btw) **/
+    /**
+     * Alle gerechten met het type en de prijs (exclusief btw)
+     **/
     public void gerechten() {
         //pasta
         gerechten.add(new PastaGerecht("Lasagne", "Pasta-gerecht", 1.23));
@@ -42,7 +44,9 @@ public class Applicatie {
     }
 
 
-    /** De de applicatie kan suggesties geven voor avondeten door middel van vragen waar je trek in hebt **/
+    /**
+     * De de applicatie kan suggesties geven voor avondeten door middel van vragen waar je trek in hebt
+     **/
     public Applicatie() {
         gerechten();
         Scanner scanner = new Scanner(System.in);
@@ -58,71 +62,72 @@ public class Applicatie {
             String num = scanner.nextLine(); // met num geef je het type gerecht aan(Pasta, Rijst, Deeg, Vegetarisch)
             //1. pasta keuze
             if (num.equals("1")) {
-                ArrayList<Gerecht> PastaGerechten = getGerechtenLijst("Pasta-gerecht");
+                ArrayList<GerechtUitprinter> pastaGerechten = getGerechtenLijst("Pasta-gerecht");
                 String opties = "";
                 int teller = 0;
-                for (Gerecht gerecht : PastaGerechten) {
-                    opties += (++teller + ". " + gerecht.getName() + " ");
+                for (GerechtUitprinter gerechtUitprinter : pastaGerechten) {
+                    opties += (++teller + ". " + gerechtUitprinter.getName() + " ");
                 }
                 System.out.println("[Pasta] Heeft u trek in " + opties);
                 String pastaInput = scanner.nextLine();
                 Integer number = Integer.valueOf(pastaInput);
-                System.out.printf("%s%n", PastaGerechten.get(number - 1));
+                System.out.printf("%s%n", pastaGerechten.get(number - 1));
             }
 
             //2. rijst keuze
             if (num.equals("2")) {
-                ArrayList<Gerecht> RijstGerechten = getGerechtenLijst("Rijst-gerecht");
+                ArrayList<GerechtUitprinter> rijstGerechten = getGerechtenLijst("Rijst-gerecht");
                 String opties = "";
                 int teller = 0;
-                for (Gerecht gerecht : RijstGerechten) {
-                    opties += (++teller + ". " + gerecht.getName() + " ");
+                for (GerechtUitprinter gerechtUitprinter : rijstGerechten) {
+                    opties += (++teller + ". " + gerechtUitprinter.getName() + " ");
                 }
                 System.out.println("[Rijst] Heeft u trek in " + opties);
                 String rijstInput = scanner.nextLine();
                 Integer number = Integer.valueOf(rijstInput);
-                System.out.printf("%s%n", RijstGerechten.get(number - 1));
+                System.out.printf("%s%n", rijstGerechten.get(number - 1));
             }
             // 3. deeg keuze
             if (num.equals("3")) {
-                ArrayList<Gerecht> DeegGerechten = getGerechtenLijst("Deeg-gerecht");
+                ArrayList<GerechtUitprinter> deegGerechten = getGerechtenLijst("Deeg-gerecht");
                 String opties = "";
                 int teller = 0;
-                for (Gerecht gerecht : DeegGerechten) {
-                    opties += (++teller + ". " + gerecht.getName() + " ");
+                for (GerechtUitprinter gerechtUitprinter : deegGerechten) {
+                    opties += (++teller + ". " + gerechtUitprinter.getName() + " ");
                 }
                 System.out.println("[Deeg] Heeft u trek in " + opties);
                 String DeegInput = scanner.nextLine();
                 Integer number = Integer.valueOf(DeegInput);
-                System.out.printf("%s%n", DeegGerechten.get(number - 1));
+                System.out.printf("%s%n", deegGerechten.get(number - 1));
             }
 
             // 4. vegetarisch keuze
             if (num.equals("4")) {
-                ArrayList<Gerecht> VegetarischGerechten = getGerechtenLijst("Vegetarisch-gerecht");
+                ArrayList<GerechtUitprinter> vegetarischGerechten = getGerechtenLijst("Vegetarisch-gerecht");
                 String opties = "";
                 int teller = 0;
-                for (Gerecht gerecht : VegetarischGerechten) {
-                    opties += (++teller + ". " + gerecht.getName() + " ");
+                for (GerechtUitprinter gerechtUitprinter : vegetarischGerechten) {
+                    opties += (++teller + ". " + gerechtUitprinter.getName() + " ");
                 }
                 System.out.println("[Vegetarisch] Heeft u trek in " + opties);
                 int vegetarischInput = scanner.nextInt();
                 Integer number = Integer.valueOf(vegetarischInput);
-                System.out.printf("%s%n", VegetarischGerechten.get(number - 1));
+                System.out.printf("%s%n", vegetarischGerechten.get(number - 1));
             }
 
         }
-        if (keuze.equals("2")){
+        if (keuze.equals("2")) {
             new Pizzakeuzemenu();
 
         }
     }
-        //Maakt de suggesties voor het avondeten dynamic. getGerechtenLijst stopt alle gerechten in de juiste locaties
-    public ArrayList<Gerecht> getGerechtenLijst(String typeGerecht) {
-        ArrayList<Gerecht> arrayToevoegen = new ArrayList<>();
-        for (Gerecht gerecht : gerechten) {
-            if (gerecht.getType().equals(typeGerecht)) {
-                arrayToevoegen.add(gerecht);
+
+    //Maakt de suggesties voor het avondeten dynamic. getGerechtenLijst stopt alle gerechten in de juiste locaties
+    public ArrayList<GerechtUitprinter> getGerechtenLijst(String typeGerecht) {
+        ArrayList<GerechtUitprinter> arrayToevoegen = new ArrayList<>();
+        for (GerechtUitprinter gerechtUitprinter : gerechten) {
+            if (gerechtUitprinter.getType().equals(typeGerecht)) {
+                arrayToevoegen.add(gerechtUitprinter);
             }
         }
 

@@ -1,6 +1,4 @@
-import static java.lang.Math.random;
-
-class DeegGerecht extends Gerecht {
+class DeegGerecht extends GerechtUitprinter {
     public DeegGerecht(String name, String type, double prijs) {
         super(name, type, prijs);
     }

@@ -1,5 +1,5 @@
 
-class RijstGerecht extends Gerecht {
+class RijstGerecht extends GerechtUitprinter {
     public RijstGerecht(String name, String type, double prijs) {
         super(name, type, prijs);
     }

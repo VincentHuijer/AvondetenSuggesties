@@ -1,5 +1,5 @@
 
-class VegetarischGerecht extends Gerecht {
+class VegetarischGerecht extends GerechtUitprinter {
     public VegetarischGerecht(String name, String Type, double prijs) {
         super(name, Type, prijs);
 

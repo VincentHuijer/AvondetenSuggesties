@@ -1,8 +1,4 @@
-import org.junit.Assert;
-import org.junit.jupiter.api.Test;
-
-
-class PastaGerecht extends Gerecht {
+class PastaGerecht extends GerechtUitprinter {
 
     public PastaGerecht(String name, String type, Double prijs) {
         super(name, type, prijs);
