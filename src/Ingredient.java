@@ -38,7 +38,6 @@ public class Ingredient {
         this.groente = groente;
     }
 
-
     public ArrayList<Ingredient> Getingredienten() {
         if (alleIngredienten.size() == 0) {
             alleIngredienten.add(new Ingredient("kip", 14, 0, 20, false));
