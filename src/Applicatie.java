@@ -48,6 +48,7 @@ public class Applicatie {
      * De de applicatie kan suggesties geven voor avondeten door middel van vragen waar je trek in hebt
      **/
     public Applicatie() {
+        Gerecht gerecht = new Gerecht();
         gerechten();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wat wilt u doen? voer een optie in met de getallen 1 tot en met 2.");
@@ -72,6 +73,10 @@ public class Applicatie {
                 String pastaInput = scanner.nextLine();
                 Integer number = Integer.valueOf(pastaInput);
                 System.out.printf("%s%n", pastaGerechten.get(number - 1));
+                for (int i = 0; i < gerecht.zoekGerecht("lasagne").getIngredienten().size(); i++){
+                    System.out.println(gerecht.zoekGerecht("lasagne").getIngredienten().get(i).getNaam());
+
+                }
             }
 
             //2. rijst keuze

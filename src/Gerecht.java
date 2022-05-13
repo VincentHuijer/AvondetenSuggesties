@@ -11,19 +11,39 @@ public class Gerecht {
         this.ingredienten = ingredienten;
         alleGerechten.add(this);
     }
+    public Gerecht(){
+        getAlleGerechten();
+    }
+    //TODO we wilen niet gerechten printen we willen in de applicatie ingredienten printen die bij het gerecht horen
+    //TODO wanneer gerecht gelijk is aan lasagne. Print uit alle ingredienten van lasagne.
 
 
+   /* public String gerechtenPrinter(ArrayList<Gerecht> alleGerechten){
+        for (Gerecht AG : alleGerechten){
+            for (AG.ingredienten);
+        }
+    } */
     public String getNaam() {
         return this.naam;
+    }
+    public Gerecht zoekGerecht(String naam) {
+        for (Gerecht gerecht : alleGerechten) {
+            if (gerecht.getNaam().equals(naam)) {
+                return gerecht;
+            }
+        }
+        return null;
     }
 
     public ArrayList<Ingredient> getIngredienten() {
 
         return ingredienten;
     }
-
-
     public ArrayList<Gerecht> getAlleGerechten() {
+     //   Ingredient ingredient = new Ingredient();
+     //   ingredient.getIngredientenLijst();
+     //   Gerecht lasagne = new Gerecht("lasagne", new ArrayList<Ingredient>());
+
         if (alleGerechten.size() == 0) {
             //Collections is voor het beheren van lijsten
             Collections.addAll(new Gerecht("lasagne", new ArrayList<Ingredient>()).getIngredienten(),
@@ -51,10 +71,11 @@ public class Gerecht {
                     Ingredient.zoekIngredient("kaas"),
                     Ingredient.zoekIngredient("peper"),
                     Ingredient.zoekIngredient("zout"));
+
+
         }
         return alleGerechten;
-        //                             lasagne.add(pasta);
-
+//        lasagne.add(pasta);
 //        lasagne.add(wortel);
 //        lasagne.add(tomaat);
 //        lasagne.add(rundGehakt);

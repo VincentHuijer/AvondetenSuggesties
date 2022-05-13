@@ -26,7 +26,7 @@ public class Ingredient {
     private boolean groente;
 
 
-    public static ArrayList<Ingredient> alleIngredienten = new ArrayList<>();
+    private static ArrayList<Ingredient> alleIngredienten = new ArrayList<>();
 
 
     //de paremeters van ingredienten
@@ -38,7 +38,7 @@ public class Ingredient {
         this.groente = groente;
     }
 
-    public ArrayList<Ingredient> Getingredienten() {
+    public static ArrayList<Ingredient> getIngredientenLijst() {
         if (alleIngredienten.size() == 0) {
             alleIngredienten.add(new Ingredient("kip", 14, 0, 20, false));
             alleIngredienten.add(new Ingredient("pasta", 1.1, 3.2, 10, false));
@@ -84,13 +84,16 @@ public class Ingredient {
 
 
     public static Ingredient zoekIngredient(String naam) {
-        for (Ingredient ingredient : alleIngredienten) {
+        for (Ingredient ingredient : getIngredientenLijst()) {
             if (ingredient.getNaam().equals(naam)) {
                 return ingredient;
             }
         }
         return null;
     }
+
+
+
 
     public String getNaam() {
         return naam;
