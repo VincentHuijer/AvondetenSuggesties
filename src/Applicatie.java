@@ -19,7 +19,7 @@ public class Applicatie {
     public void gerechten() {
         //pasta
         gerechten.add(new PastaGerecht("Lasagne", "Pasta-gerecht", 1.23));
-        gerechten.add(new PastaGerecht("Penne alla Vodka", "Pasta-gerecht", 6.32));
+        gerechten.add(new PastaGerecht("Penne-alla-Vodka", "Pasta-gerecht", 6.32));
         gerechten.add(new PastaGerecht("Spaghetti", "Pasta-gerecht", 1.54));
         gerechten.add(new PastaGerecht("Tagliatelle", "Pasta-gerecht", 1.01));
         gerechten.add(new PastaGerecht("Macaroni", "Pasta-gerecht", 0.77));
@@ -28,13 +28,13 @@ public class Applicatie {
         gerechten.add(new RijstGerecht("Kip Siam", "Rijst-gerecht", 0.65));
         gerechten.add(new RijstGerecht("Bulgoli", "Rijst-gerecht", 0.99));
         gerechten.add(new RijstGerecht("Nasi", "Rijst-gerecht", 7.32));
-        gerechten.add(new RijstGerecht("Kip Tandoori", "Rijst-gerecht", 3.21));
+        gerechten.add(new RijstGerecht("Kip-Tandoori", "Rijst-gerecht", 3.21));
         //deeg
         gerechten.add(new DeegGerecht("Pizza", "Deeg-gerecht", 2.43));
         gerechten.add(new DeegGerecht("Spinazietaart", "Deeg-gerecht", 2.41));
         gerechten.add(new DeegGerecht("Burritos", "Deeg-gerecht", 2.74));
         gerechten.add(new DeegGerecht("Quiche", "Deeg-gerecht", 3.53));
-        gerechten.add(new DeegGerecht("Caprese Empanadas", "Deeg-gerecht", 3.33));
+        gerechten.add(new DeegGerecht("Caprese-Empanadas", "Deeg-gerecht", 3.33));
         //vegetarisch
         gerechten.add(new VegetarischGerecht("Salade", "Vegetarisch-gerecht", 2.13));
         gerechten.add(new VegetarischGerecht("Vega-taco's", "Vegetarisch-gerecht", 1.11));
@@ -59,7 +59,7 @@ public class Applicatie {
         if (keuze.equals("1")) {
             System.out.println("Waar heeft u trek in? Voer een optie in met de getallen 1 tot en met 4.");
             System.out.println("heeft u trek in 1. Pasta, 2. Rijst, 3. Deeg-recepten, 4. Vegetarisch");
-
+//TODO ik zou IPV 4 if staments met de exact zelfde code ook 1 code gebruiken die kies uit pasta/rijst/deeg/vegetarische gerechten gebruikt in een if statement
             String num = scanner.nextLine(); // met num geef je het type gerecht aan(Pasta, Rijst, Deeg, Vegetarisch)
             //1. pasta keuze
             if (num.equals("1")) {
@@ -73,8 +73,12 @@ public class Applicatie {
                 String pastaInput = scanner.nextLine();
                 Integer number = Integer.valueOf(pastaInput);
                 System.out.printf("%s%n", pastaGerechten.get(number - 1));
-                for (int i = 0; i < gerecht.zoekGerecht("lasagne").getIngredienten().size(); i++){
-                    System.out.println(gerecht.zoekGerecht("lasagne").getIngredienten().get(i).getNaam());
+                System.out.println("Dit gerecht bevat de volgende ingrediënten");
+          //      String ingredientenOutput = String.valueOf(pastaGerechten.get(number - 1));
+                for (int i = 0; i < gerecht.zoekGerecht("Lasagne").getIngredienten().size(); i++){
+                    System.out.println(gerecht.zoekGerecht("Lasagne").getIngredienten().get(i).getNaam());
+                    gerecht.controleerSportMaaltijd("Lasagne");
+                    gerecht.controleerGezondOfOngezond("Lasagne");
 
                 }
             }
@@ -90,6 +94,8 @@ public class Applicatie {
                 System.out.println("[Rijst] Heeft u trek in " + opties);
                 String rijstInput = scanner.nextLine();
                 Integer number = Integer.valueOf(rijstInput);
+                //String test = String.valueOf(rijstGerechten.get(number - 1));
+
                 System.out.printf("%s%n", rijstGerechten.get(number - 1));
             }
             // 3. deeg keuze

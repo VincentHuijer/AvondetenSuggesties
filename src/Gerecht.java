@@ -11,21 +11,24 @@ public class Gerecht {
         this.ingredienten = ingredienten;
         alleGerechten.add(this);
     }
-    public Gerecht(){
+
+    public Gerecht() {
         getAlleGerechten();
     }
     //TODO we wilen niet gerechten printen we willen in de applicatie ingredienten printen die bij het gerecht horen
     //TODO wanneer gerecht gelijk is aan lasagne. Print uit alle ingredienten van lasagne.
 
 
-   /* public String gerechtenPrinter(ArrayList<Gerecht> alleGerechten){
-        for (Gerecht AG : alleGerechten){
-            for (AG.ingredienten);
-        }
-    } */
+    /* public String gerechtenPrinter(ArrayList<Gerecht> alleGerechten){
+         for (Gerecht AG : alleGerechten){
+             for (AG.ingredienten);
+         }
+     } */
     public String getNaam() {
         return this.naam;
     }
+
+    //Als je een naam bv. lasagne meegeeft kijkt zoekGerecht in alleGerechten naar een match.
     public Gerecht zoekGerecht(String naam) {
         for (Gerecht gerecht : alleGerechten) {
             if (gerecht.getNaam().equals(naam)) {
@@ -39,14 +42,13 @@ public class Gerecht {
 
         return ingredienten;
     }
-    public ArrayList<Gerecht> getAlleGerechten() {
-     //   Ingredient ingredient = new Ingredient();
-     //   ingredient.getIngredientenLijst();
-     //   Gerecht lasagne = new Gerecht("lasagne", new ArrayList<Ingredient>());
 
+    //Bevat alle gerechten en gebruikt de methode zoekIngredient om uit de ingredienten ArrayList een match te vinden om aan het gerecht toe te voegen.
+    public ArrayList<Gerecht> getAlleGerechten() {
         if (alleGerechten.size() == 0) {
             //Collections is voor het beheren van lijsten
-            Collections.addAll(new Gerecht("lasagne", new ArrayList<Ingredient>()).getIngredienten(),
+            //pasta gerechten
+            Collections.addAll(new Gerecht("Lasagne", new ArrayList<Ingredient>()).getIngredienten(),
                     Ingredient.zoekIngredient("pasta"),
                     Ingredient.zoekIngredient("wortel"),
                     Ingredient.zoekIngredient("tomaat"),
@@ -55,14 +57,14 @@ public class Gerecht {
                     Ingredient.zoekIngredient("mozzarella"),
                     Ingredient.zoekIngredient("kaas"),
                     Ingredient.zoekIngredient("ui"));
-            Collections.addAll(new Gerecht("penneAllaVodka", new ArrayList<Ingredient>()).getIngredienten(),
+            Collections.addAll(new Gerecht("Penne-alla-Vodka", new ArrayList<Ingredient>()).getIngredienten(),
                     Ingredient.zoekIngredient("vodka"),
                     Ingredient.zoekIngredient("ui"),
                     Ingredient.zoekIngredient("knoflook"),
                     Ingredient.zoekIngredient("ham"),
                     Ingredient.zoekIngredient("tomaat"),
                     Ingredient.zoekIngredient("pasta"));
-            Collections.addAll(new Gerecht("spaghetti", new ArrayList<Ingredient>()).getIngredienten(),
+            Collections.addAll(new Gerecht("Spaghetti", new ArrayList<Ingredient>()).getIngredienten(),
                     Ingredient.zoekIngredient("pastaSlierten"),
                     Ingredient.zoekIngredient("ui"),
                     Ingredient.zoekIngredient("rundGehakt"),
@@ -71,215 +73,153 @@ public class Gerecht {
                     Ingredient.zoekIngredient("kaas"),
                     Ingredient.zoekIngredient("peper"),
                     Ingredient.zoekIngredient("zout"));
-
+            Collections.addAll(new Gerecht("Tagliatelle", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("spek"),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("rundGehakt"),
+                    Ingredient.zoekIngredient("pastasaus"),
+                    Ingredient.zoekIngredient("pastaSlierten"));
+            Collections.addAll(new Gerecht("Macaroni", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("pasta"),
+                    Ingredient.zoekIngredient("courgette"),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("rundGehakt"),
+                    Ingredient.zoekIngredient("tomaat"),
+                    Ingredient.zoekIngredient("kaas"),
+                    Ingredient.zoekIngredient("peper"),
+                    Ingredient.zoekIngredient("tomatenpuree"));
+            //rijst gerechten
+            Collections.addAll(new Gerecht("Risotto", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("rijst"),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("bouillon"),
+                    Ingredient.zoekIngredient("kaas"),
+                    Ingredient.zoekIngredient("boter"),
+                    Ingredient.zoekIngredient("pompoen"));
+            Collections.addAll(new Gerecht("kipSiam", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("kip"),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("paprika"),
+                    Ingredient.zoekIngredient("knoflook"),
+                    Ingredient.zoekIngredient("gember"),
+                    Ingredient.zoekIngredient("ketjap"),
+                    Ingredient.zoekIngredient("zout"));
+            Collections.addAll(new Gerecht("Bulgoli", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("rundGehakt"),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("knoflook"),
+                    Ingredient.zoekIngredient("gember"));
+            Collections.addAll(new Gerecht("Nasi", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("knoflook"),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("ham"),
+                    Ingredient.zoekIngredient("olijfolie"),
+                    Ingredient.zoekIngredient("sambal"),
+                    Ingredient.zoekIngredient("ketjap"),
+                    Ingredient.zoekIngredient("zout"),
+                    Ingredient.zoekIngredient("peper"));
+            Collections.addAll(new Gerecht("Kip-Tandoori", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("kip"),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("rijst"),
+                    Ingredient.zoekIngredient("olijfolie"),
+                    Ingredient.zoekIngredient("gember"),
+                    Ingredient.zoekIngredient("tomatenpuree"),
+                    Ingredient.zoekIngredient("zout"),
+                    Ingredient.zoekIngredient("peper"));
+            //deeg
+            Collections.addAll(new Gerecht("Pizza", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("deeg"),
+                    Ingredient.zoekIngredient("tarweBloem"),
+                    Ingredient.zoekIngredient("olijfolie"),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("tomaat"),
+                    Ingredient.zoekIngredient("kaas"),
+                    Ingredient.zoekIngredient("champignons"),
+                    Ingredient.zoekIngredient("mozzarella"),
+                    Ingredient.zoekIngredient("zout"),
+                    Ingredient.zoekIngredient("peper"));
+            Collections.addAll(new Gerecht("SpinazieTaart", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("spinazie"),
+                    Ingredient.zoekIngredient("bladerdeeg"),
+                    Ingredient.zoekIngredient("olijfolie"),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("ei"),
+                    Ingredient.zoekIngredient("kaas"),
+                    Ingredient.zoekIngredient("zout"),
+                    Ingredient.zoekIngredient("peper"));
+            Collections.addAll(new Gerecht("Burritos", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("deeg"),
+                    Ingredient.zoekIngredient("paprika"),
+                    Ingredient.zoekIngredient("courgette"),
+                    Ingredient.zoekIngredient("champignons"),
+                    Ingredient.zoekIngredient("kaas"),
+                    Ingredient.zoekIngredient("zout"),
+                    Ingredient.zoekIngredient("peper"));
+            Collections.addAll(new Gerecht("Quiche", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("champignons"),
+                    Ingredient.zoekIngredient("paprika"),
+                    Ingredient.zoekIngredient("ei"),
+                    Ingredient.zoekIngredient("peper"),
+                    Ingredient.zoekIngredient("bladerdeeg"),
+                    Ingredient.zoekIngredient("boter"),
+                    Ingredient.zoekIngredient("kaas"));
+            Collections.addAll(new Gerecht("Caprese-Empanadas", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("deeg"),
+                    Ingredient.zoekIngredient("tarweBloem"),
+                    Ingredient.zoekIngredient("boter"),
+                    Ingredient.zoekIngredient("ei"),
+                    Ingredient.zoekIngredient("tomaat"),
+                    Ingredient.zoekIngredient("mozzarella"),
+                    Ingredient.zoekIngredient("peper"),
+                    Ingredient.zoekIngredient("zout"));
+            //vegetarisch
+            Collections.addAll(new Gerecht("Salade", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("sla"),
+                    Ingredient.zoekIngredient("tomaat"),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("boter"),
+                    Ingredient.zoekIngredient("gember"),
+                    Ingredient.zoekIngredient("olijfolie"),
+                    Ingredient.zoekIngredient("courgette"));
+            Collections.addAll(new Gerecht("Vega-taco's", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("paprika"),
+                    Ingredient.zoekIngredient("olijfolie"),
+                    Ingredient.zoekIngredient("nierbonen"),
+                    Ingredient.zoekIngredient("tomaat"),
+                    Ingredient.zoekIngredient("peper"),
+                    Ingredient.zoekIngredient("zout"));
+            Collections.addAll(new Gerecht("Stamppot", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("prei"),
+                    Ingredient.zoekIngredient("aardappel"),
+                    Ingredient.zoekIngredient("tomaat"),
+                    Ingredient.zoekIngredient("paprika"),
+                    Ingredient.zoekIngredient("boter"),
+                    Ingredient.zoekIngredient("peper"),
+                    Ingredient.zoekIngredient("zout"));
+            Collections.addAll(new Gerecht("Shakshuka", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("tomaat"),
+                    Ingredient.zoekIngredient("ei"),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("knoflook"),
+                    Ingredient.zoekIngredient("paprika"),
+                    Ingredient.zoekIngredient("olijfolie"),
+                    Ingredient.zoekIngredient("peper"),
+                    Ingredient.zoekIngredient("zout"));
+            Collections.addAll(new Gerecht("Hutspot", new ArrayList<Ingredient>()).getIngredienten(),
+                    Ingredient.zoekIngredient("wortel"),
+                    Ingredient.zoekIngredient("tomaat"),
+                    Ingredient.zoekIngredient("ui"),
+                    Ingredient.zoekIngredient("boter"),
+                    Ingredient.zoekIngredient("peper"),
+                    Ingredient.zoekIngredient("zout"));
 
         }
         return alleGerechten;
-//        lasagne.add(pasta);
-//        lasagne.add(wortel);
-//        lasagne.add(tomaat);
-//        lasagne.add(rundGehakt);
-//        lasagne.add(bleekselderij);
-//        lasagne.add(mozzarella);
-//        lasagne.add(kaas);
-//        lasagne.add(ui);
-//
-//        penneAllaVodka.add(vodka);
-//        penneAllaVodka.add(ui);
-//        penneAllaVodka.add(knoflook);
-//        penneAllaVodka.add(ham);
-//        penneAllaVodka.add(tomaat);
-//        penneAllaVodka.add(pasta);
-//
-//        spaghetti.add(pastaSlierten);
-//        spaghetti.add(ui);
-//        spaghetti.add(rundGehakt);
-//        spaghetti.add(tomatenpuree);
-//        spaghetti.add(bouillon);
-//        spaghetti.add(kaas);
-//        spaghetti.add(peper);
-//        spaghetti.add(zout);
-//
-//        tagliatelle.add(spek);
-//        tagliatelle.add(ui);
-//        tagliatelle.add(rundGehakt);
-//        tagliatelle.add(pastasaus);
-//        tagliatelle.add(pastaSlierten);
-//
-//        macaroni.add(pasta);
-//        macaroni.add(courgette);
-//        macaroni.add(champignons);
-//        macaroni.add(rundGehakt);
-//        macaroni.add(ui);
-//        macaroni.add(tomaat);
-//        macaroni.add(tomatenpuree);
-//        macaroni.add(kaas);
-//        macaroni.add(peper);
-//
-//        //rijst
-//        risotto.add(rijst);
-//        risotto.add(ui);
-//        risotto.add(bouillon);
-//        risotto.add(kaas);
-//        risotto.add(boter);
-//        risotto.add(pompoen);
-//
-//        kipSiam.add(kip);
-//        kipSiam.add(paprika);
-//        kipSiam.add(ui);
-//        kipSiam.add(knoflook);
-//        kipSiam.add(gember);
-//        kipSiam.add(ketjap);
-//        kipSiam.add(peper);
-//        kipSiam.add(zout);
-//
-//        bulgoli.add(rundGehakt);
-//        bulgoli.add(ui);
-//        bulgoli.add(knoflook);
-//        bulgoli.add(gember);
-//
-//        nasi.add(knoflook);
-//        nasi.add(ui);
-//        nasi.add(ham);
-//        nasi.add(olijfolie);
-//        nasi.add(sambal);
-//        nasi.add(ketjap);
-//        nasi.add(zout);
-//        nasi.add(peper);
-//
-//        kipTandoori.add(kip);
-//        kipTandoori.add(ui);
-//        kipTandoori.add(rijst);
-//        kipTandoori.add(olijfolie);
-//        kipTandoori.add(gember);
-//        kipTandoori.add(tomatenpuree);
-//        kipTandoori.add(peper);
-//        kipTandoori.add(zout);
-//
-//        //deeg
-//        pizza.add(deeg);
-//        pizza.add(tarweBloem);
-//        pizza.add(olijfolie);
-//        pizza.add(ui);
-//        pizza.add(tomaat);
-//        pizza.add(kaas);
-//        pizza.add(champignons);
-//        pizza.add(mozzarella);
-//        pizza.add(peper);
-//        pizza.add(zout);
-//
-//
-//        spinazieTaart.add(spinazie);
-//        spinazieTaart.add(bladerdeeg);
-//        spinazieTaart.add(olijfolie);
-//        spinazieTaart.add(knoflook);
-//        spinazieTaart.add(ui);
-//        spinazieTaart.add(ei);
-//        spinazieTaart.add(kaas);
-//        spinazieTaart.add(zout);
-//        spinazieTaart.add(peper);
-//
-//        burritos.add(deeg);
-//        burritos.add(paprika);
-//        burritos.add(courgette);
-//        burritos.add(rijst);
-//        burritos.add(kaas);
-//        burritos.add(zout);
-//        burritos.add(peper);
-//
-//        quiche.add(champignons);
-//        quiche.add(paprika);
-//        quiche.add(ei);
-//        quiche.add(peper);
-//        quiche.add(bladerdeeg);
-//        quiche.add(kaas);
-//        quiche.add(boter);
-//
-//        capreseEmpanadas.add(deeg);
-//        capreseEmpanadas.add(tarweBloem);
-//        capreseEmpanadas.add(boter);
-//        capreseEmpanadas.add(ei);
-//        capreseEmpanadas.add(tomaat);
-//        capreseEmpanadas.add(mozzarella);
-//        capreseEmpanadas.add(peper);
-//        capreseEmpanadas.add(zout);
-//
-//        //vegetarisch
-//        salade.add(sla);
-//        salade.add(tomaat);
-//        salade.add(ui);
-//        salade.add(boter);
-//        salade.add(gember);
-//        salade.add(olijfolie);
-//        salade.add(courgette);
-//
-//        vegaTaco.add(ui);
-//        vegaTaco.add(paprika);
-//        vegaTaco.add(olijfolie);
-//        vegaTaco.add(nierbonen);
-//        vegaTaco.add(tomaat);
-//        vegaTaco.add(peper);
-//        vegaTaco.add(zout);
-//
-//        stamppot.add(prei);
-//        stamppot.add(aardappel);
-//        stamppot.add(tomaat);
-//        stamppot.add(paprika);
-//        stamppot.add(boter);
-//        stamppot.add(olijfolie);
-//        stamppot.add(peper);
-//        stamppot.add(zout);
-//
-//        shakshuka.add(tomaat);
-//        shakshuka.add(ei);
-//        shakshuka.add(ui);
-//        shakshuka.add(knoflook);
-//        shakshuka.add(paprika);
-//        shakshuka.add(olijfolie);
-//        shakshuka.add(peper);
-//        shakshuka.add(zout);
-//
-//        hutspost.add(wortel);
-//        hutspost.add(ui);
-//        hutspost.add(tomaat);
-//        hutspost.add(boter);
-//        hutspost.add(tomaat);
-//        hutspost.add(peper);
-//        hutspost.add(zout);
     }
 
-
-    /**
-     * gerechtenlijst.add(zoekIngredient());
-     * gerechtenlijst.add(penneAllaVodka);
-     * gerechtenlijst.add(spaghetti);
-     * gerechtenlijst.add(tagliatelle);
-     * gerechtenlijst.add(macaroni);
-     * <p>
-     * //rijst
-     * gerechtenlijst.add(risotto);
-     * gerechtenlijst.add(kipSiam);
-     * gerechtenlijst.add(bulgoli);
-     * gerechtenlijst.add(nasi);
-     * gerechtenlijst.add(kipTandoori);
-     * //deeg
-     * gerechtenlijst.add(pizza);
-     * gerechtenlijst.add(spinazieTaart);
-     * gerechtenlijst.add(burritos);
-     * gerechtenlijst.add(quiche);
-     * gerechtenlijst.add(capreseEmpanadas);
-     * //vegetarisch
-     * gerechtenlijst.add(salade);
-     * gerechtenlijst.add(vegaTaco);
-     * gerechtenlijst.add(stamppot);
-     * gerechtenlijst.add(shakshuka);
-     * gerechtenlijst.add(hutspost);
-     * <p>
-     * <p>
-     * }return alleGerechten;
-     * }
-     **/
-
+    /*
     public void GerechtenVoedingswaarde() {
         double vetten = 0;
         double koolhydraten = 0;
@@ -290,180 +230,40 @@ public class Gerecht {
             eiwitten += ingredient.getEiwitten();
             System.out.println(ingredient.getNaam());
         }
+    } */
+
+    public boolean controleerGezondOfOngezond(String gerechtNaam) {
+        boolean gezond = false;
+        double vettenTeller = 0;
+        double koolhydratenTeller = 0;
+        boolean groenteChecker = true;
+
+        for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
+            vettenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getVet();
+            koolhydratenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getKoolhydraten();
+            if (zoekGerecht(gerechtNaam).getIngredienten().get(i).isGroente() == true) {
+                groenteChecker = true;
+            }
+            if (vettenTeller > 30 && koolhydratenTeller > 50 && !groenteChecker) {
+                return gezond = false;
+            }
+        }
+        return gezond = true;
+    }
+
+    public void controleerSportMaaltijd(String gerechtNaam) {
+        double eiwittenTeller = 0;
+        for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
+            eiwittenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getEiwitten();
+            if (eiwittenTeller < 10) {
+                System.out.println("slechte maaltijd voor sporten!\nDit gerecht bevat nauwelijks proteïne.");
+            }
+            if (eiwittenTeller >= 10 && eiwittenTeller < 20) {
+                System.out.println("Standaard maaltijd voor eiwitten.\nNeem misschien nog een ander hapje om de proteïne op te bouwen. ");
+            }
+            if (eiwittenTeller >= 20) {
+                System.out.println("Sport maaltijd.\nRijk aan proteïne. Zeer goed voor de spieropbouw!");
+            }
+        }
     }
 }
-//        public void gerechtenSamenstellen (ArrayList) {
-//                             lasagne.add(pasta);
-//        lasagne.add(wortel);
-//        lasagne.add(tomaat);
-//        lasagne.add(rundGehakt);
-//        lasagne.add(bleekselderij);
-//        lasagne.add(mozzarella);
-//        lasagne.add(kaas);
-//        lasagne.add(ui);
-//
-//        penneAllaVodka.add(vodka);
-//        penneAllaVodka.add(ui);
-//        penneAllaVodka.add(knoflook);
-//        penneAllaVodka.add(ham);
-//        penneAllaVodka.add(tomaat);
-//        penneAllaVodka.add(pasta);
-//
-//        spaghetti.add(pastaSlierten);
-//        spaghetti.add(ui);
-//        spaghetti.add(rundGehakt);
-//        spaghetti.add(tomatenpuree);
-//        spaghetti.add(bouillon);
-//        spaghetti.add(kaas);
-//        spaghetti.add(peper);
-//        spaghetti.add(zout);
-//
-//        tagliatelle.add(spek);
-//        tagliatelle.add(ui);
-//        tagliatelle.add(rundGehakt);
-//        tagliatelle.add(pastasaus);
-//        tagliatelle.add(pastaSlierten);
-//
-//        macaroni.add(pasta);
-//        macaroni.add(courgette);
-//        macaroni.add(champignons);
-//        macaroni.add(rundGehakt);
-//        macaroni.add(ui);
-//        macaroni.add(tomaat);
-//        macaroni.add(tomatenpuree);
-//        macaroni.add(kaas);
-//        macaroni.add(peper);
-//
-//        //rijst
-//        risotto.add(rijst);
-//        risotto.add(ui);
-//        risotto.add(bouillon);
-//        risotto.add(kaas);
-//        risotto.add(boter);
-//        risotto.add(pompoen);
-//
-//        kipSiam.add(kip);
-//        kipSiam.add(paprika);
-//        kipSiam.add(ui);
-//        kipSiam.add(knoflook);
-//        kipSiam.add(gember);
-//        kipSiam.add(ketjap);
-//        kipSiam.add(peper);
-//        kipSiam.add(zout);
-//
-//        bulgoli.add(rundGehakt);
-//        bulgoli.add(ui);
-//        bulgoli.add(knoflook);
-//        bulgoli.add(gember);
-//
-//        nasi.add(knoflook);
-//        nasi.add(ui);
-//        nasi.add(ham);
-//        nasi.add(olijfolie);
-//        nasi.add(sambal);
-//        nasi.add(ketjap);
-//        nasi.add(zout);
-//        nasi.add(peper);
-//
-//        kipTandoori.add(kip);
-//        kipTandoori.add(ui);
-//        kipTandoori.add(rijst);
-//        kipTandoori.add(olijfolie);
-//        kipTandoori.add(gember);
-//        kipTandoori.add(tomatenpuree);
-//        kipTandoori.add(peper);
-//        kipTandoori.add(zout);
-//
-//        //deeg
-//        pizza.add(deeg);
-//        pizza.add(tarweBloem);
-//        pizza.add(olijfolie);
-//        pizza.add(ui);
-//        pizza.add(tomaat);
-//        pizza.add(kaas);
-//        pizza.add(champignons);
-//        pizza.add(mozzarella);
-//        pizza.add(peper);
-//        pizza.add(zout);
-//
-//
-//        spinazieTaart.add(spinazie);
-//        spinazieTaart.add(bladerdeeg);
-//        spinazieTaart.add(olijfolie);
-//        spinazieTaart.add(knoflook);
-//        spinazieTaart.add(ui);
-//        spinazieTaart.add(ei);
-//        spinazieTaart.add(kaas);
-//        spinazieTaart.add(zout);
-//        spinazieTaart.add(peper);
-//
-//        burritos.add(deeg);
-//        burritos.add(paprika);
-//        burritos.add(courgette);
-//        burritos.add(rijst);
-//        burritos.add(kaas);
-//        burritos.add(zout);
-//        burritos.add(peper);
-//
-//        quiche.add(champignons);
-//        quiche.add(paprika);
-//        quiche.add(ei);
-//        quiche.add(peper);
-//        quiche.add(bladerdeeg);
-//        quiche.add(kaas);
-//        quiche.add(boter);
-//
-//        capreseEmpanadas.add(deeg);
-//        capreseEmpanadas.add(tarweBloem);
-//        capreseEmpanadas.add(boter);
-//        capreseEmpanadas.add(ei);
-//        capreseEmpanadas.add(tomaat);
-//        capreseEmpanadas.add(mozzarella);
-//        capreseEmpanadas.add(peper);
-//        capreseEmpanadas.add(zout);
-//
-//        //vegetarisch
-//        salade.add(sla);
-//        salade.add(tomaat);
-//        salade.add(ui);
-//        salade.add(boter);
-//        salade.add(gember);
-//        salade.add(olijfolie);
-//        salade.add(courgette);
-//
-//        vegaTaco.add(ui);
-//        vegaTaco.add(paprika);
-//        vegaTaco.add(olijfolie);
-//        vegaTaco.add(nierbonen);
-//        vegaTaco.add(tomaat);
-//        vegaTaco.add(peper);
-//        vegaTaco.add(zout);
-//
-//        stamppot.add(prei);
-//        stamppot.add(aardappel);
-//        stamppot.add(tomaat);
-//        stamppot.add(paprika);
-//        stamppot.add(boter);
-//        stamppot.add(olijfolie);
-//        stamppot.add(peper);
-//        stamppot.add(zout);
-//
-//        shakshuka.add(tomaat);
-//        shakshuka.add(ei);
-//        shakshuka.add(ui);
-//        shakshuka.add(knoflook);
-//        shakshuka.add(paprika);
-//        shakshuka.add(olijfolie);
-//        shakshuka.add(peper);
-//        shakshuka.add(zout);
-//
-//        hutspost.add(wortel);
-//        hutspost.add(ui);
-//        hutspost.add(tomaat);
-//        hutspost.add(boter);
-//        hutspost.add(tomaat);
-//        hutspost.add(peper);
-//        hutspost.add(zout);
-//            }
-//    }
-
