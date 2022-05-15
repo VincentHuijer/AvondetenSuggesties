@@ -38,30 +38,31 @@ class GerechtUitprinter {
         return type;
     }
 
-    public void SportMaaltijdPrinter(double eiwitten) {
+    public String sportMaaltijdPrinter(double eiwitten) {
         if (eiwitten < 10) {
-            System.out.println("slechte maaltijd voor sporten!\nDit gerecht bevat nauwelijks proteïne.");
+            return "slechte maaltijd voor sporten!\nDit gerecht bevat nauwelijks proteïne.";
         }
         if (eiwitten >= 10 && eiwitten < 20) {
-            System.out.println("Standaard maaltijd voor eiwitten.\nNeem misschien nog een ander hapje om de proteïne op te bouwen. ");
+            return "Standaard maaltijd voor eiwitten.\nNeem misschien nog een ander hapje om de proteïne op te bouwen.";
         }
-        if (eiwitten >= 20) {
-            System.out.println("Sport maaltijd.\nRijk aan proteïne. Zeer goed voor de spieropbouw!");
+        else{ //eiwitten >= 20
+            return "Sport maaltijd.\nRijk aan proteïne. Zeer goed voor de spieropbouw!";
         }
 
     }
 
-    public void GezondOfOngezondPrinter(boolean gezondOfOngezond) {
-        if (!gezondOfOngezond) {
-            System.out.println("Dit gerecht is ongezond!");
+    public String gezondOfOngezondPrinter(double vetten, double koolhydraten, boolean groente) {
+        if ((vetten > 30 || koolhydraten > 50) && !groente) {
+            //Als een gerecht meer dan 30 gram vet bevat OF meer dan 50 gram koolhydraten EN htt bevat geen groente is het ongezond!
+            return "Dit gerecht is ongezond!";
         } else {
-            System.out.println("Dit gerecht is gezond. Goed bezig!");
+            //Als een gerecht minder dan 30 gram vet bevat OF minder dan 50 gram koolhydraten EN het bevat groente is het gezond!
+            return "Dit gerecht is gezond!";
         }
     }
 
-
-    public void voedingswaardesPrinter(double vetten, double koolhydraten, double eiwitten) {
-        System.out.printf("Dit gerecht bevat %.2f vetten, %.2f koolhydraten, %.2f eiwitten\n", vetten, koolhydraten, eiwitten);
+    public String voedingswaardesPrinter(double vetten, double koolhydraten, double eiwitten) {
+        return String.format("Dit gerecht bevat %.2f vetten, %.2f koolhydraten, %.2f eiwitten\n", vetten, koolhydraten, eiwitten);
     }
 }
 

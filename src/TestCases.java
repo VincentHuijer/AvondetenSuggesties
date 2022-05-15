@@ -21,7 +21,7 @@ class TestClass {
         for (GerechtUitprinter gerechtUitprinter : pastaGerechten) {
             opties += (++teller + ". " + gerechtUitprinter.getName() + " ");
         }
-        String expected = "[Pasta] Heeft u trek in 1. Lasagne 2. Penne alla Vodka 3. Spaghetti 4. Tagliatelle 5. Macaroni ";
+        String expected = "[Pasta] Heeft u trek in 1. Lasagne 2. Penne-alla-Vodka 3. Spaghetti 4. Tagliatelle 5. Macaroni ";
         String actual = "[Pasta] Heeft u trek in " + opties;
 
         assertEquals(expected, actual);
@@ -74,4 +74,39 @@ class TestClass {
         assertEquals(8.00, pizza.getPizzaPrijs("large", false, true, false), 0.001);
     }
 
+
+    @Test
+    public void sportMaaltijdPrinterTest() {
+        GerechtUitprinter gerechtUitprinter = new GerechtUitprinter();
+        String expectedEiwittenLagerDan10 = "slechte maaltijd voor sporten!\nDit gerecht bevat nauwelijks proteïne.";
+        String expectedEiwitten10OfHogerKleinerDan20 = "Standaard maaltijd voor eiwitten.\nNeem misschien nog een ander hapje om de proteïne op te bouwen.";
+        String expectedEiwitten20OfHoger = "Sport maaltijd.\nRijk aan proteïne. Zeer goed voor de spieropbouw!";
+        Assert.assertEquals(expectedEiwittenLagerDan10, gerechtUitprinter.sportMaaltijdPrinter(0));
+        Assert.assertEquals(expectedEiwittenLagerDan10, gerechtUitprinter.sportMaaltijdPrinter(1));
+        Assert.assertEquals(expectedEiwittenLagerDan10, gerechtUitprinter.sportMaaltijdPrinter(9));
+        Assert.assertEquals(expectedEiwitten10OfHogerKleinerDan20, gerechtUitprinter.sportMaaltijdPrinter(10));
+        Assert.assertEquals(expectedEiwitten10OfHogerKleinerDan20, gerechtUitprinter.sportMaaltijdPrinter(11));
+        Assert.assertEquals(expectedEiwitten10OfHogerKleinerDan20, gerechtUitprinter.sportMaaltijdPrinter(19));
+        Assert.assertEquals(expectedEiwitten20OfHoger, gerechtUitprinter.sportMaaltijdPrinter(20));
+        Assert.assertEquals(expectedEiwitten20OfHoger, gerechtUitprinter.sportMaaltijdPrinter(21));
+    }
+
+
+    /**
+     * Voorwaarden = ( A || B) && !C
+     * A = Een gerecht bevat meer dan 30 gram vet
+     * B = Een gerecht bevat meer dan 50 gram koolhydraten
+     * C = Een gerecht bevat groente
+     * D = Een gerecht is ongezond(D = 1) als het meer dan 30 gram vet bevat OF meer dan 50 koolhydraten EN het bevat geen groente
+     **/
+    @Test
+    public void testControleerGerechtGezondOfOngezond() {
+        GerechtUitprinter gerechtUitprinter = new GerechtUitprinter();
+        String expectedGezond = "Dit gerecht is gezond!"; // Decision van formule = 0
+        String expectedOngezond = "Dit gerecht is ongezond!"; // Decision van formule = 1
+        Assert.assertEquals(expectedGezond, gerechtUitprinter.gezondOfOngezondPrinter(20, 30, false));
+        Assert.assertEquals(expectedOngezond, gerechtUitprinter.gezondOfOngezondPrinter(40, 30, false));
+        Assert.assertEquals(expectedOngezond, gerechtUitprinter.gezondOfOngezondPrinter(40, 60, false));
+        Assert.assertEquals(expectedGezond, gerechtUitprinter.gezondOfOngezondPrinter(40, 60, true));
+    }
 }
