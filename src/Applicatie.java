@@ -59,7 +59,6 @@ public class Applicatie {
         if (keuze.equals("1")) {
             System.out.println("Waar heeft u trek in? Voer een optie in met de getallen 1 tot en met 4.");
             System.out.println("heeft u trek in 1. Pasta, 2. Rijst, 3. Deeg-recepten, 4. Vegetarisch");
-//TODO ik zou IPV 4 if staments met de exact zelfde code ook 1 code gebruiken die kies uit pasta/rijst/deeg/vegetarische gerechten gebruikt in een if statement
             String num = scanner.nextLine(); // met num geef je het type gerecht aan(Pasta, Rijst, Deeg, Vegetarisch)
             //1. pasta keuze
             if (num.equals("1")) {
@@ -74,13 +73,14 @@ public class Applicatie {
                 Integer number = Integer.valueOf(pastaInput);
                 System.out.printf("%s%n", pastaGerechten.get(number - 1));
                 System.out.println("Dit gerecht bevat de volgende ingrediënten");
-          //      String ingredientenOutput = String.valueOf(pastaGerechten.get(number - 1));
-                for (int i = 0; i < gerecht.zoekGerecht("Lasagne").getIngredienten().size(); i++){
-                    System.out.println(gerecht.zoekGerecht("Lasagne").getIngredienten().get(i).getNaam());
-                    gerecht.controleerSportMaaltijd("Lasagne");
-                    gerecht.controleerGezondOfOngezond("Lasagne");
-
+                for (int i = 0; i < gerecht.zoekGerecht(pastaGerechten.get(number - 1).getName()).getIngredienten().size(); i++) {
+                    System.out.println(gerecht.zoekGerecht(pastaGerechten.get(number - 1).getName()).getIngredienten().get(i).getNaam());
                 }
+                gerecht.controleerGerechtSportMaaltijd(pastaGerechten.get(number - 1).getName());
+                gerecht.controleerGerechtGezondOfOngezond(pastaGerechten.get(number - 1).getName());
+                gerecht.voedingswaardes(pastaGerechten.get(number - 1).getName());
+
+
             }
 
             //2. rijst keuze
@@ -97,6 +97,13 @@ public class Applicatie {
                 //String test = String.valueOf(rijstGerechten.get(number - 1));
 
                 System.out.printf("%s%n", rijstGerechten.get(number - 1));
+                System.out.println("Dit gerecht bevat de volgende ingrediënten");
+                for (int i = 0; i < gerecht.zoekGerecht(rijstGerechten.get(number - 1).getName()).getIngredienten().size(); i++) {
+                    System.out.println(gerecht.zoekGerecht(rijstGerechten.get(number - 1).getName()).getIngredienten().get(i).getNaam());
+                }
+                gerecht.controleerGerechtSportMaaltijd(rijstGerechten.get(number - 1).getName());
+                gerecht.controleerGerechtGezondOfOngezond(rijstGerechten.get(number - 1).getName());
+                gerecht.voedingswaardes(rijstGerechten.get(number - 1).getName());
             }
             // 3. deeg keuze
             if (num.equals("3")) {
@@ -110,6 +117,13 @@ public class Applicatie {
                 String DeegInput = scanner.nextLine();
                 Integer number = Integer.valueOf(DeegInput);
                 System.out.printf("%s%n", deegGerechten.get(number - 1));
+                System.out.println("Dit gerecht bevat de volgende ingrediënten");
+                for (int i = 0; i < gerecht.zoekGerecht(deegGerechten.get(number - 1).getName()).getIngredienten().size(); i++) {
+                    System.out.println(gerecht.zoekGerecht(deegGerechten.get(number - 1).getName()).getIngredienten().get(i).getNaam());
+                }
+                gerecht.controleerGerechtSportMaaltijd(deegGerechten.get(number - 1).getName());
+                gerecht.controleerGerechtGezondOfOngezond(deegGerechten.get(number - 1).getName());
+                gerecht.voedingswaardes(deegGerechten.get(number - 1).getName());
             }
 
             // 4. vegetarisch keuze
@@ -124,6 +138,13 @@ public class Applicatie {
                 int vegetarischInput = scanner.nextInt();
                 Integer number = Integer.valueOf(vegetarischInput);
                 System.out.printf("%s%n", vegetarischGerechten.get(number - 1));
+                System.out.println("Dit gerecht bevat de volgende ingrediënten");
+                for (int i = 0; i < gerecht.zoekGerecht(vegetarischGerechten.get(number - 1).getName()).getIngredienten().size(); i++) {
+                    System.out.println(gerecht.zoekGerecht(vegetarischGerechten.get(number - 1).getName()).getIngredienten().get(i).getNaam());
+                }
+                gerecht.controleerGerechtSportMaaltijd(vegetarischGerechten.get(number - 1).getName());
+                gerecht.controleerGerechtGezondOfOngezond(vegetarischGerechten.get(number - 1).getName());
+                gerecht.voedingswaardes(vegetarischGerechten.get(number - 1).getName());
             }
 
         }
@@ -145,8 +166,3 @@ public class Applicatie {
         return arrayToevoegen;
     }
 }
-
-
-
-
-

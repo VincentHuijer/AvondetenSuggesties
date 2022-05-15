@@ -19,11 +19,7 @@ public class Gerecht {
     //TODO wanneer gerecht gelijk is aan lasagne. Print uit alle ingredienten van lasagne.
 
 
-    /* public String gerechtenPrinter(ArrayList<Gerecht> alleGerechten){
-         for (Gerecht AG : alleGerechten){
-             for (AG.ingredienten);
-         }
-     } */
+
     public String getNaam() {
         return this.naam;
     }
@@ -219,51 +215,87 @@ public class Gerecht {
         return alleGerechten;
     }
 
-    /*
-    public void GerechtenVoedingswaarde() {
-        double vetten = 0;
-        double koolhydraten = 0;
-        double eiwitten = 0;
-        for (Ingredient ingredient : ingredienten) {
-            vetten += ingredient.getVet();
-            koolhydraten += ingredient.getKoolhydraten();
-            eiwitten += ingredient.getEiwitten();
-            System.out.println(ingredient.getNaam());
-        }
-    } */
 
-    public boolean controleerGezondOfOngezond(String gerechtNaam) {
-        boolean gezond = false;
+    public void controleerGerechtGezondOfOngezond(String gerechtNaam) {
         double vettenTeller = 0;
         double koolhydratenTeller = 0;
-        boolean groenteChecker = true;
+        boolean groenteChecker = false;
+        GerechtUitprinter gerechtUitprinter = new GerechtUitprinter();
 
         for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
             vettenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getVet();
             koolhydratenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getKoolhydraten();
+
             if (zoekGerecht(gerechtNaam).getIngredienten().get(i).isGroente() == true) {
                 groenteChecker = true;
             }
-            if (vettenTeller > 30 && koolhydratenTeller > 50 && !groenteChecker) {
-                return gezond = false;
-            }
         }
-        return gezond = true;
-    }
+        //Als een gerecht meer dan 30 gram vet bevat OF meer dan 50 gram koolhydraten EN htt bevat geen groente is het ongezond!
+            if ((vettenTeller > 30 || koolhydratenTeller > 50) && !groenteChecker) {
+                gerechtUitprinter.GezondOfOngezondPrinter(false);
+            } else {
+        //Als een gerecht minder dan 30 gram vet bevat OF minder dan 50 gram koolhydraten EN het bevat groente is het gezond!
+                gerechtUitprinter.GezondOfOngezondPrinter(true);
+            }
 
-    public void controleerSportMaaltijd(String gerechtNaam) {
+        }
+
+
+    public void controleerGerechtSportMaaltijd(String gerechtNaam) {
+        GerechtUitprinter gerechtUitprinter = new GerechtUitprinter();
         double eiwittenTeller = 0;
         for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
             eiwittenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getEiwitten();
-            if (eiwittenTeller < 10) {
-                System.out.println("slechte maaltijd voor sporten!\nDit gerecht bevat nauwelijks proteïne.");
-            }
-            if (eiwittenTeller >= 10 && eiwittenTeller < 20) {
-                System.out.println("Standaard maaltijd voor eiwitten.\nNeem misschien nog een ander hapje om de proteïne op te bouwen. ");
-            }
-            if (eiwittenTeller >= 20) {
-                System.out.println("Sport maaltijd.\nRijk aan proteïne. Zeer goed voor de spieropbouw!");
-            }
+        }
+            gerechtUitprinter.SportMaaltijdPrinter(eiwittenTeller);
+
+    }
+
+    public void voedingswaardes(String gerechtNaam) {
+        GerechtUitprinter gerechtUitprinter = new GerechtUitprinter();
+        double vettenTeller = 0;
+        double koolhydratenTeller = 0;
+        double eiwittenTeller = 0;
+        for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
+            vettenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getVet();
+            koolhydratenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getKoolhydraten();
+            eiwittenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getEiwitten();
+        }
+            gerechtUitprinter.voedingswaardesPrinter(vettenTeller, koolhydratenTeller, eiwittenTeller);
         }
     }
-}
+
+/* public void controleerGerechtGezondOfOngezond(String gerechtNaam) {
+        boolean gezond = false;
+        double vettenTeller = 0;
+        double koolhydratenTeller = 0;
+        boolean groenteChecker = false;
+        GerechtUitprinter gerechtUitprinter = new GerechtUitprinter();
+
+        for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
+            vettenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getVet();
+            koolhydratenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getKoolhydraten();
+
+            if (zoekGerecht(gerechtNaam).getIngredienten().get(i).isGroente() == true) {
+                groenteChecker = true;
+            }
+        }
+            if ((vettenTeller > 30 || koolhydratenTeller > 50) && !groenteChecker) {
+                gerechtUitprinter.GezondOfOngezondPrinter(gezond);
+            } else {
+
+                gerechtUitprinter.GezondOfOngezondPrinter(gezond = true);
+            }
+
+        }
+
+    public void controleerGerechtSportMaaltijd(String gerechtNaam) {
+        GerechtUitprinter gerechtUitprinter = new GerechtUitprinter();
+        double eiwittenTeller = 0;
+        for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
+            eiwittenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getEiwitten();
+        }
+            gerechtUitprinter.SportMaaltijdPrinter(eiwittenTeller);
+        }
+    }
+*/
