@@ -51,18 +51,10 @@ class GerechtUitprinter {
 
     }
 
-    public String gezondOfOngezondPrinter(double vetten, double koolhydraten, boolean groente) {
-        if ((vetten > 30 || koolhydraten > 50) && !groente) {
-            //Als een gerecht meer dan 30 gram vet bevat OF meer dan 50 gram koolhydraten EN htt bevat geen groente is het ongezond!
-            return "Dit gerecht is ongezond!";
-        } else {
-            //Als een gerecht minder dan 30 gram vet bevat OF minder dan 50 gram koolhydraten EN het bevat groente is het gezond!
-            return "Dit gerecht is gezond!";
-        }
-    }
 
-    public String voedingswaardesPrinter(double vetten, double koolhydraten, double eiwitten) {
-        return String.format("Dit gerecht bevat %.2f vetten, %.2f koolhydraten, %.2f eiwitten\n", vetten, koolhydraten, eiwitten);
+
+    public void voedingswaardesPrinter(double vetten, double koolhydraten, double eiwitten) {
+        System.out.printf("Dit gerecht bevat %.2f vetten, %.2f koolhydraten, %.2f eiwitten\n", vetten, koolhydraten, eiwitten);
     }
 }
 

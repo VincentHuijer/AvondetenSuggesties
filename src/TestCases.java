@@ -101,12 +101,10 @@ class TestClass {
      **/
     @Test
     public void testControleerGerechtGezondOfOngezond() {
-        GerechtUitprinter gerechtUitprinter = new GerechtUitprinter();
-        String expectedGezond = "Dit gerecht is gezond!"; // Decision van formule = 0
-        String expectedOngezond = "Dit gerecht is ongezond!"; // Decision van formule = 1
-        Assert.assertEquals(expectedGezond, gerechtUitprinter.gezondOfOngezondPrinter(20, 30, false));
-        Assert.assertEquals(expectedOngezond, gerechtUitprinter.gezondOfOngezondPrinter(40, 30, false));
-        Assert.assertEquals(expectedOngezond, gerechtUitprinter.gezondOfOngezondPrinter(40, 60, false));
-        Assert.assertEquals(expectedGezond, gerechtUitprinter.gezondOfOngezondPrinter(40, 60, true));
+        Gerecht gerecht = new Gerecht();
+        Assert.assertFalse(gerecht.GerechtGezondOfOngezondControle(20, 30, false));
+        Assert.assertTrue(gerecht.GerechtGezondOfOngezondControle(40, 30, false));
+        Assert.assertTrue(gerecht.GerechtGezondOfOngezondControle(40, 60, false));
+        Assert.assertFalse(gerecht.GerechtGezondOfOngezondControle(40, 60, true));
     }
 }

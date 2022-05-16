@@ -76,8 +76,8 @@ public class Applicatie {
                 for (int i = 0; i < gerecht.zoekGerecht(pastaGerechten.get(number - 1).getName()).getIngredienten().size(); i++) {
                     System.out.println(gerecht.zoekGerecht(pastaGerechten.get(number - 1).getName()).getIngredienten().get(i).getNaam());
                 }
+                gerecht.gerechtGezondheid(pastaGerechten.get(number - 1).getName());
                 gerecht.controleerGerechtSportMaaltijd(pastaGerechten.get(number - 1).getName());
-                gerecht.controleerGerechtGezondOfOngezond(pastaGerechten.get(number - 1).getName());
                 gerecht.voedingswaardes(pastaGerechten.get(number - 1).getName());
 
 
@@ -102,7 +102,7 @@ public class Applicatie {
                     System.out.println(gerecht.zoekGerecht(rijstGerechten.get(number - 1).getName()).getIngredienten().get(i).getNaam());
                 }
                 gerecht.controleerGerechtSportMaaltijd(rijstGerechten.get(number - 1).getName());
-                gerecht.controleerGerechtGezondOfOngezond(rijstGerechten.get(number - 1).getName());
+                gerecht.gerechtGezondheid(rijstGerechten.get(number - 1).getName());
                 gerecht.voedingswaardes(rijstGerechten.get(number - 1).getName());
             }
             // 3. deeg keuze
@@ -122,7 +122,7 @@ public class Applicatie {
                     System.out.println(gerecht.zoekGerecht(deegGerechten.get(number - 1).getName()).getIngredienten().get(i).getNaam());
                 }
                 gerecht.controleerGerechtSportMaaltijd(deegGerechten.get(number - 1).getName());
-                gerecht.controleerGerechtGezondOfOngezond(deegGerechten.get(number - 1).getName());
+                gerecht.gerechtGezondheid(deegGerechten.get(number - 1).getName());
                 gerecht.voedingswaardes(deegGerechten.get(number - 1).getName());
             }
 
@@ -143,7 +143,7 @@ public class Applicatie {
                     System.out.println(gerecht.zoekGerecht(vegetarischGerechten.get(number - 1).getName()).getIngredienten().get(i).getNaam());
                 }
                 gerecht.controleerGerechtSportMaaltijd(vegetarischGerechten.get(number - 1).getName());
-                gerecht.controleerGerechtGezondOfOngezond(vegetarischGerechten.get(number - 1).getName());
+                gerecht.gerechtGezondheid(vegetarischGerechten.get(number - 1).getName());
                 gerecht.voedingswaardes(vegetarischGerechten.get(number - 1).getName());
             }
 

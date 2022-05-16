@@ -17,8 +17,6 @@ public class Gerecht {
     }
 
 
-
-
     public String getNaam() {
         return this.naam;
     }
@@ -215,7 +213,7 @@ public class Gerecht {
     }
 
 
-    public void controleerGerechtGezondOfOngezond(String gerechtNaam) {
+    public void gerechtGezondheid(String gerechtNaam) {
         double vettenTeller = 0;
         double koolhydratenTeller = 0;
         boolean groenteChecker = false;
@@ -228,11 +226,22 @@ public class Gerecht {
                 groenteChecker = true;
             }
         }
-        System.out.println(gerechtUitprinter.gezondOfOngezondPrinter(vettenTeller, koolhydratenTeller, groenteChecker));
-            }
+        if (GerechtGezondOfOngezondControle(vettenTeller, koolhydratenTeller, groenteChecker)) {
+            System.out.println("Dit gerecht is ongezond!");
+        } else {
+            System.out.println("Dit gerecht is gezond!");
+        }
+    }
 
-
-
+    public boolean GerechtGezondOfOngezondControle(double vetten, double koolhydraten, boolean groente) {
+        if ((vetten > 30 || koolhydraten > 50) && !groente) {
+            //Als een gerecht meer dan 30 gram vet bevat OF meer dan 50 gram koolhydraten EN het bevat geen groente is het ongezond!
+            return true;
+        } else {
+            //Als een gerecht minder dan 30 gram vet bevat OF minder dan 50 gram koolhydraten EN het bevat groente is het gezond!
+            return false;
+        }
+    }
 
     public void controleerGerechtSportMaaltijd(String gerechtNaam) {
         double eiwittenTeller = 0;
@@ -247,14 +256,15 @@ public class Gerecht {
         double vettenTeller = 0;
         double koolhydratenTeller = 0;
         double eiwittenTeller = 0;
+        boolean groenteChecker = false;
         for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
             vettenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getVet();
             koolhydratenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getKoolhydraten();
             eiwittenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getEiwitten();
         }
         gerechtUitprinter.voedingswaardesPrinter(vettenTeller, koolhydratenTeller, eiwittenTeller);
-        }
     }
+}
 
 /* public void controleerGerechtGezondOfOngezond(String gerechtNaam) {
         boolean gezond = false;
