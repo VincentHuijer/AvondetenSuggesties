@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 class TestClass {
     @Test
-    public void TestGerechtenLijst() {
+    public void TestGerechtKiezen() {
         String input = "1\n1\n1\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
