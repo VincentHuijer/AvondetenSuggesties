@@ -26,7 +26,6 @@ public class Pizzakeuzemenu {
         pizzaMeat(pizzaVleesInput);
 
 
-        /**Kaaskorst alleen mogelijk bij medium and large sized pizza's **/
         //input voor kaaskorst van je pizza
             System.out.println("wilt u voor uw pizza standaard korst of wilt u korst met kaas? +1,00€ Kies uit de nummers 1 t/m 2.");
             System.out.println("1. Standaard deeg");
@@ -35,7 +34,6 @@ public class Pizzakeuzemenu {
             pizzaCheeseCrust(pizzadeegInput);
 
 
-        /**Studentenkorting alleen mogelijk bij small sized pizza's **/
         //input voor studentenpas
             System.out.println("heeft u een studentenpas bij u? Kies uit de nummers 1 t/m 2.");
             System.out.println("1. ja, ik ben een student en heb een studentenpas");

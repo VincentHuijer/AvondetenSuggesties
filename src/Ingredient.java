@@ -1,21 +1,5 @@
 import java.util.ArrayList;
 
-
-// ArrayList<Ingredient> ingredienten = new ArrayList();
-
-
-/*    public ArrayList<Ingredienten> getIngredienten(String naam) {
-        ArrayList<Ingredienten> arrayIngredientToevoegen = new ArrayList<>();
-        for (Ingredient ingredient : Ingredienten) {
-            if (Ingredient.naam.equals(naam)) {
-                arrayIngredientToevoegen.add(ingredient);
-            }
-        }
-
-        return arrayIngredientToevoegen;
-    }
-    }*/
-
 public class Ingredient {
 
     private String naam;
@@ -91,9 +75,6 @@ public class Ingredient {
         }
         return null;
     }
-
-
-
 
     public String getNaam() {
         return naam;

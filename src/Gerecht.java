@@ -266,37 +266,3 @@ public class Gerecht {
     }
 }
 
-/* public void controleerGerechtGezondOfOngezond(String gerechtNaam) {
-        boolean gezond = false;
-        double vettenTeller = 0;
-        double koolhydratenTeller = 0;
-        boolean groenteChecker = false;
-        GerechtUitprinter gerechtUitprinter = new GerechtUitprinter();
-
-        for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
-            vettenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getVet();
-            koolhydratenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getKoolhydraten();
-
-            if (zoekGerecht(gerechtNaam).getIngredienten().get(i).isGroente() == true) {
-                groenteChecker = true;
-            }
-        }
-            if ((vettenTeller > 30 || koolhydratenTeller > 50) && !groenteChecker) {
-                gerechtUitprinter.GezondOfOngezondPrinter(gezond);
-            } else {
-
-                gerechtUitprinter.GezondOfOngezondPrinter(gezond = true);
-            }
-
-        }
-
-    public void controleerGerechtSportMaaltijd(String gerechtNaam) {
-        GerechtUitprinter gerechtUitprinter = new GerechtUitprinter();
-        double eiwittenTeller = 0;
-        for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
-            eiwittenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getEiwitten();
-        }
-            gerechtUitprinter.SportMaaltijdPrinter(eiwittenTeller);
-        }
-    }
-*/
