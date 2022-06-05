@@ -1,24 +1,15 @@
 package TemplateMethodPattern;
 
-public class BigMacBurger extends Burger {
-    String[] vlees = {"Rundvlees"};
-    String[] kaas = {"Cheddar"};
-    String[] groente = {"sla", "augurk", "ui"};
-    String[] saus = {"Big Mac Saus"};
+public class BroodjeKipCarpaccio extends KipBroodjes {
+    String[] vlees = {"Rundercarpaccio", "kiprollade"};
+    String[] groente = {"sla", "zwaardherik"};
+    String[] saus = {"pesto", "romano"};
 
     @Override
     public void addVlees() {
         System.out.println("Bevat het volgende vlees: ");
         for (String vlees : vlees) {
             System.out.println(vlees + " ");
-        }
-    }
-
-    @Override
-    public void addKaas() {
-        System.out.println("Bevat de volgende kaas: ");
-        for (String kaas : kaas) {
-            System.out.println(kaas + " ");
         }
     }
 
@@ -41,6 +32,6 @@ public class BigMacBurger extends Burger {
 
     @Override
     public String getName() {
-        return "Big Mac Burger";
+        return "Broodje Carpaccio";
     }
 }

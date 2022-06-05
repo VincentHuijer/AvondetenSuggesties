@@ -1,10 +1,9 @@
 package TemplateMethodPattern;
 
-public class DoubleBigTastyBurger extends Burger {
-    String[] vlees = {"Rundvlees", "bacon"};
-    String[] kaas = {"Emmentaler"};
-    String[] groente = {"sla", "Witte ui", "tomaat"};
-    String[] saus = {"Big Tasty Saus"};
+public class BroodjeKipShoarma extends KipBroodjes {
+    String[] vlees = {"kipShoarma", "bacon"};
+    String[] groente = {"betavia sla", "paprika", "tomaat", "ui"};
+    String[] saus = {"knoflooksaus", "Piri-Piri"};
 
     @Override
     public void addVlees() {
@@ -14,13 +13,6 @@ public class DoubleBigTastyBurger extends Burger {
         }
     }
 
-    @Override
-    public void addKaas() {
-        System.out.println("Bevat de volgende kaas: ");
-        for (String kaas : kaas) {
-            System.out.println(kaas + " ");
-        }
-    }
 
     @Override
     public void addGroente() {
@@ -41,6 +33,6 @@ public class DoubleBigTastyBurger extends Burger {
 
     @Override
     public String getName() {
-        return "Double Big Tasty Burger";
+        return "Broodje Kipshoarma";
     }
 }

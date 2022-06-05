@@ -1,5 +1,5 @@
 import AbstractFactoryPattern.FactoryKeuzemenu;
-import TemplateMethodPattern.BurgerKeuzemenu;
+import TemplateMethodPattern.BroodjeKipKeuzemenu;
 
 import java.util.Scanner;
 
@@ -8,10 +8,10 @@ class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println(
                 "Wat wilt u doen? voer een optie in met de getallen 1 t/m 2.\n" +
-                        "1. Geef mij een suggestie voor het avondeten.\n" +
+                        "1. Suggesties voor het zelf bereiden van avondeten.\n" +
                         "2. Suggesties voor pizza bestellen.\n" +
                         "3. Suggesties voor Rooster broodjes bestellen.\n" +
-                        "4. Suggesties voor McDonalds of Burger King bestellen.");
+                        "4. Suggesties voor McDonalds of KipBroodjes King bestellen.");
         String optie = scanner.nextLine();
         if (optie.equals("1")) {
             new GerechtKeuzemenu();
@@ -20,7 +20,7 @@ class Main {
             new PizzaKeuzemenu();
         }
         if (optie.equals("3")) {
-            new BurgerKeuzemenu();
+            new BroodjeKipKeuzemenu();
         }
         if (optie.equals("4")) {
             new FactoryKeuzemenu();
