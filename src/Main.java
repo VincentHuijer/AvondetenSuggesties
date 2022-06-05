@@ -1,5 +1,5 @@
 import AbstractFactoryPattern.FactoryKeuzemenu;
-import TemplateMethodPattern.BroodjeKipKeuzemenu;
+import TemplateMethodPattern.KipBroodjeKeuzemenu;
 
 import java.util.Scanner;
 
@@ -20,7 +20,7 @@ class Main {
             new PizzaKeuzemenu();
         }
         if (optie.equals("3")) {
-            new BroodjeKipKeuzemenu();
+            new KipBroodjeKeuzemenu();
         }
         if (optie.equals("4")) {
             new FactoryKeuzemenu();
