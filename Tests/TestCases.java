@@ -8,51 +8,46 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 
 class TestClass {
-    /* @Test
-     public void TestGerechtKiezen() {
-         String input = "1\n1\n1\n";
-         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
-         System.setIn(byteStream);
-         startKeuzemenu applicatie = new startKeuzemenu();
+    @Test
+    public void TestGerechtkeuzeOpties() {
+        String input = "1\n1\n1\n";
+        ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
+        System.setIn(byteStream);
+        GerechtKeuzemenu gerechtKeuzemenu = new GerechtKeuzemenu();
 
-         ArrayList<GerechtUitprinter> pastaGerechten = applicatie.getGerechtenLijst("Pasta-gerecht");
-         String opties = "";
-         int teller = 0;
-         for (GerechtUitprinter gerechtUitprinter : pastaGerechten) {
-             opties += (++teller + ". " + gerechtUitprinter.getName() + " ");
-         }
-         String expected = "[Pasta] Heeft u trek in 1. Lasagne 2. Penne-alla-Vodka 3. Spaghetti 4. Tagliatelle 5. Macaroni ";
-         String actual = "[Pasta] Heeft u trek in " + opties;
+        ArrayList<GerechtUitprinter> pastaGerechten = gerechtKeuzemenu.getGerechtOptiesLijst("Pasta-gerecht");
+        String opties = "";
+        int teller = 0;
+        for (GerechtUitprinter gerechtUitprinter : pastaGerechten) {
+            opties += (++teller + ". " + gerechtUitprinter.getName() + " ");
+        }
+        String expected = "[Pasta] Heeft u trek in 1. Lasagne 2. Penne-alla-Vodka 3. Spaghetti 4. Tagliatelle 5. Macaroni ";
+        String actual = "[Pasta] Heeft u trek in " + opties;
 
-         assertEquals(expected, actual);
-     }
+        assertEquals(expected, actual);
+    }
 
-     @Test
-     public void testApplicatie() {
-         String input = "1\n4\n3\n";
-         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
-         System.setIn(byteStream);
-         startKeuzemenu applicatie = new startKeuzemenu();
+    @Test
+    public void testGerechtKeuzemenuGerechtKiezen() {
+        String input = "1\n4\n3\n";
+        ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
+        System.setIn(byteStream);
+        GerechtKeuzemenu gerechtKeuzemenu = new GerechtKeuzemenu();
+        ArrayList<GerechtUitprinter> vegetarischGerechten = gerechtKeuzemenu.getGerechtOptiesLijst("Vegetarisch-gerecht");
+        String opties = "";
+        int teller = 0;
+        for (GerechtUitprinter gerechtUitprinter : vegetarischGerechten) {
+            opties += (++teller + ". " + gerechtUitprinter.getName() + " ");
+        }
+        Integer number = Integer.valueOf(input.split("\n")[2]);
+        GerechtUitprinter output = vegetarischGerechten.get(number - 1);
 
-         ArrayList<GerechtUitprinter> vegetarischGerechten = applicatie.getGerechtenLijst("Vegetarisch-gerecht");
-         String opties = "";
-         int teller = 0;
-         for (GerechtUitprinter gerechtUitprinter : vegetarischGerechten) {
-             opties += (++teller + ". " + gerechtUitprinter.getName() + " ");
-         }
+        String expected = "U koos voor Stamppot van het type Vegetarisch-gerecht. \n" +
+                "dit gerecht zou rond de 2,59€ kosten om te bereiden.";
+        String actual = String.valueOf(output);
+        assertEquals(expected, actual);
+    }
 
-         Integer number = Integer.valueOf(input.split("\n")[2]);
-         GerechtUitprinter output = vegetarischGerechten.get(number - 1);
-
-         String expected = "U koos voor Stamppot van het type Vegetarisch-gerecht. \n" +
-                 "dit gerecht zou rond de 2,59€ kosten om te bereiden.";
-
-         //Aangezien output van het type Gerecht is vind assert het niet fijn om een object met een String te vergelijken
-         String actual = String.valueOf(output);
-
-         assertEquals(expected, actual);
-     }
- */
     @Test
     public void testPastaGerechtEnBTW() {
         PastaGerecht pastaGerecht = new PastaGerecht("testLasagne", "Pasta-gerecht", 1.00);
@@ -65,7 +60,6 @@ class TestClass {
     @Test
     public void getPizzaPrijsTest() {
         Pizza pizza = new Pizza();
-
         assertEquals(5.40, pizza.getPizzaPrijs("small", true, false, true), 0.001);
         assertEquals(6.00, pizza.getPizzaPrijs("small", false, true, false), 0.001);
         assertEquals(7.20, pizza.getPizzaPrijs("medium", true, true, true), 0.001);
@@ -73,7 +67,6 @@ class TestClass {
         assertEquals(7.20, pizza.getPizzaPrijs("large", true, false, true), 0.001);
         assertEquals(8.00, pizza.getPizzaPrijs("large", false, true, false), 0.001);
     }
-
 
     @Test
     public void sportMaaltijdPrinterTest() {
@@ -90,7 +83,6 @@ class TestClass {
         assertEquals(expectedEiwitten20OfHoger, gerecht.sportMaaltijdOutput(20));
         assertEquals(expectedEiwitten20OfHoger, gerecht.sportMaaltijdOutput(21));
     }
-
 
     /**
      * Voorwaarden = ( A || B) && !C

@@ -15,7 +15,6 @@ public class Gerecht {
     public Gerecht() {
     }
 
-
     public String getNaam() {
         return this.naam;
     }
@@ -211,7 +210,6 @@ public class Gerecht {
         return alleGerechten;
     }
 
-
     public void gerechtGezondheid(String gerechtNaam) {
         double vetten = new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).vetten();
         double koolhydraten = new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).koolhydraten();
@@ -235,16 +233,11 @@ public class Gerecht {
     }
 
     public void controleerGerechtSportMaaltijd(String gerechtNaam) {
-        // VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(zoekGerecht(gerechtNaam));
-        // double eiwittenTeller = voedingswaardenCalculator.eiwitten();
-
-        //System.out.println(gerechtUitprinter.sportMaaltijdPrinter(eiwittenTeller));
         double eiwitten = new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).eiwitten();
         System.out.println(sportMaaltijdOutput(eiwitten));
     }
 
     public String sportMaaltijdOutput(double eiwitten) {
-
         if (eiwitten < 10) {
             return "slechte maaltijd voor sporten. Dit gerecht bevat nauwelijks proteïne.";
         }
@@ -253,28 +246,15 @@ public class Gerecht {
         } else { //eiwitten >= 20
             return "Sport maaltijd, rijk aan proteïne. Zeer goed voor de spieropbouw!";
         }
-
     }
 
     public void voedingswaardesPrinter(String gerechtNaam) {
-      /*  double vettenTeller = 0;
-        double koolhydratenTeller = 0;
-        double eiwittenTeller = 0;
-        for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
-            vettenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getVet();
-            koolhydratenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getKoolhydraten();
-            eiwittenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getEiwitten();
-        }
-        voedingswaardesPrinter(vettenTeller, koolhydratenTeller, eiwittenTeller)
-
- */
         System.out.printf("Eiwitten: %.2f%n" +
                         "Vetten: %.2f%n" +
-                        "Koolhydraten %.2f%n", new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).eiwitten(),
-                new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).vetten(), new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).koolhydraten());
-        //  System.out.println(new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).vetten());
-        //  System.out.println(new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).koolhydraten());
+                        "Koolhydraten %.2f%n",
+                new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).eiwitten(),
+                new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).vetten(),
+                new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).koolhydraten());
     }
-
 }
 

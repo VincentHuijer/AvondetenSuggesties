@@ -12,8 +12,6 @@ public class Ingredient {
 
     private static ArrayList<Ingredient> alleIngredienten = new ArrayList<>();
 
-
-    //de paremeters van ingredienten
     Ingredient(String naam, double vet, double koolhydraten, double eiwitten, boolean groente) {
         this.naam = naam;
         this.vet = vet;
@@ -80,11 +78,9 @@ public class Ingredient {
         return naam;
     }
 
-
     public double getVet() {
         return vet;
     }
-
 
     public double getKoolhydraten() {
         return koolhydraten;

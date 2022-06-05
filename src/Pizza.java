@@ -4,7 +4,6 @@ public class Pizza {
 
 
     public double getPizzaPrijs(String grootte, boolean vlees, boolean Kaaskorst, boolean studentenpas) {
-
         //prijs van pizza gebaseerd op grootte
         if (grootte.equals("small")) {
             pizzaPrijs = 5.00;
