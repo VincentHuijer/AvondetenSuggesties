@@ -5,7 +5,7 @@ class VegetarischGerecht extends GerechtUitprinter {
 
 
     }
-    /**Vegetarische gerechten zijn gezond en hebben daarom minder BTW belasting! **/
+    /**Vegetarische gerechten zijn gezond en hebben daarom minder BTW belasting! (9% ipv van 21%) **/
     @Override
     public String getName() {
         return name;

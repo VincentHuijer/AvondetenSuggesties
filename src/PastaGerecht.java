@@ -18,6 +18,6 @@ class PastaGerecht extends GerechtUitprinter {
     public double getPrijs() {
         return prijs * 1.21;
     }
-    }
+}
 
 

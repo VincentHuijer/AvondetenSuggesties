@@ -5,7 +5,6 @@ public class Gerecht {
     private String naam;
     private ArrayList<Ingredient> ingredienten;
     public static ArrayList<Gerecht> alleGerechten = new ArrayList<Gerecht>();
-    GerechtUitprinter gerechtUitprinter = new GerechtUitprinter();
 
     public Gerecht(String naam, ArrayList<Ingredient> ingredienten) {
         this.naam = naam;
@@ -132,7 +131,7 @@ public class Gerecht {
                     Ingredient.zoekIngredient("mozzarella"),
                     Ingredient.zoekIngredient("zout"),
                     Ingredient.zoekIngredient("peper"));
-            Collections.addAll(new Gerecht("SpinazieTaart", new ArrayList<Ingredient>()).getIngredienten(),
+            Collections.addAll(new Gerecht("Spinazietaart", new ArrayList<Ingredient>()).getIngredienten(),
                     Ingredient.zoekIngredient("spinazie"),
                     Ingredient.zoekIngredient("bladerdeeg"),
                     Ingredient.zoekIngredient("olijfolie"),
@@ -214,22 +213,14 @@ public class Gerecht {
 
 
     public void gerechtGezondheid(String gerechtNaam) {
-        double vettenTeller = 0;
-        double koolhydratenTeller = 0;
-        boolean groenteChecker = false;
+        double vetten = new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).vetten();
+        double koolhydraten = new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).koolhydraten();
+        boolean groente = new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).bevatGroente();
 
-        for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
-            vettenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getVet();
-            koolhydratenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getKoolhydraten();
-
-            if (zoekGerecht(gerechtNaam).getIngredienten().get(i).isGroente() == true) {
-                groenteChecker = true;
-            }
-        }
-        if (GerechtGezondOfOngezondControle(vettenTeller, koolhydratenTeller, groenteChecker)) {
-            System.out.println("Dit gerecht is ongezond!");
+        if (GerechtGezondOfOngezondControle(vetten, koolhydraten, groente)) {
+            System.out.println("Dit gerecht is ongezond! Het gerecht bevat geen groente en bevat veel vetten of koolhydraten.");
         } else {
-            System.out.println("Dit gerecht is gezond!");
+            System.out.println("Dit gerecht is gezond! Het gerecht bevat groente en bevat weinig vetten of koolhydraten.");
         }
     }
 
@@ -244,25 +235,46 @@ public class Gerecht {
     }
 
     public void controleerGerechtSportMaaltijd(String gerechtNaam) {
-        double eiwittenTeller = 0;
-        for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
-            eiwittenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getEiwitten();
+        // VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(zoekGerecht(gerechtNaam));
+        // double eiwittenTeller = voedingswaardenCalculator.eiwitten();
+
+        //System.out.println(gerechtUitprinter.sportMaaltijdPrinter(eiwittenTeller));
+        double eiwitten = new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).eiwitten();
+        System.out.println(sportMaaltijdOutput(eiwitten));
+    }
+
+    public String sportMaaltijdOutput(double eiwitten) {
+
+        if (eiwitten < 10) {
+            return "slechte maaltijd voor sporten. Dit gerecht bevat nauwelijks proteïne.";
         }
-        System.out.println(gerechtUitprinter.sportMaaltijdPrinter(eiwittenTeller));
+        if (eiwitten >= 10 && eiwitten < 20) {
+            return "Standaard maaltijd voor eiwitten. Neem misschien nog iets om de proteïne op te bouwen.";
+        } else { //eiwitten >= 20
+            return "Sport maaltijd, rijk aan proteïne. Zeer goed voor de spieropbouw!";
+        }
 
     }
 
-    public void voedingswaardes(String gerechtNaam) {
-        double vettenTeller = 0;
+    public void voedingswaardesPrinter(String gerechtNaam) {
+      /*  double vettenTeller = 0;
         double koolhydratenTeller = 0;
         double eiwittenTeller = 0;
-        boolean groenteChecker = false;
         for (int i = 0; i < zoekGerecht(gerechtNaam).getIngredienten().size(); i++) {
             vettenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getVet();
             koolhydratenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getKoolhydraten();
             eiwittenTeller += zoekGerecht(gerechtNaam).getIngredienten().get(i).getEiwitten();
         }
-        gerechtUitprinter.voedingswaardesPrinter(vettenTeller, koolhydratenTeller, eiwittenTeller);
+        voedingswaardesPrinter(vettenTeller, koolhydratenTeller, eiwittenTeller)
+
+ */
+        System.out.printf("Eiwitten: %.2f%n" +
+                        "Vetten: %.2f%n" +
+                        "Koolhydraten %.2f%n", new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).eiwitten(),
+                new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).vetten(), new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).koolhydraten());
+        //  System.out.println(new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).vetten());
+        //  System.out.println(new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).koolhydraten());
     }
+
 }
 
