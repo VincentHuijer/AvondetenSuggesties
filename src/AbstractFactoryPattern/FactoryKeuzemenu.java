@@ -13,6 +13,5 @@ public class FactoryKeuzemenu {
         }
         int input = scanner.nextInt();
         new printMenukeuze(input);
-
     }
 }

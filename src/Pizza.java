@@ -1,6 +1,6 @@
 public class Pizza {
 
-    double pizzaPrijs = 0.0;
+   public double pizzaPrijs = 0.0;
 
 
     public double getPizzaPrijs(String grootte, boolean vlees, boolean Kaaskorst, boolean studentenpas) {
