@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
 public class PizzaKeuzemenu {
-    String grootte = "";
-    boolean vleesOpPizza;
-    boolean kaaskorst;
-    boolean studentenpas;
-    public String pizzaSizeInput;
+    public String grootte = "";
+    public boolean vleesOpPizza;
+    public boolean kaaskorst;
+    public boolean studentenpas;
 
     public PizzaKeuzemenu() {
         Pizza pizza = new Pizza();
