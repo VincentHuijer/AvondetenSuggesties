@@ -8,6 +8,7 @@ public class GerechtKeuzemenu {
         ArrayList<GerechtUitprinter> gerechten = new ArrayList<>();
         gerechtKeuzeOpties();
         Gerecht gerecht = new Gerecht();
+        GerechtInformatie gerechtInformatie = new GerechtInformatie();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Waar heeft u trek in? Voer een optie in met de getallen 1 tot en met 4.");
@@ -36,9 +37,9 @@ public class GerechtKeuzemenu {
         for (int i = 0; i < gerecht.zoekGerecht(gerechten.get(number - 1).getName()).getIngredienten().size(); i++) {
             System.out.println(gerecht.zoekGerecht(gerechten.get(number - 1).getName()).getIngredienten().get(i).getNaam());
         }
-        gerecht.GerechtSportMaaltijd(gerechten.get(number - 1).getName());
-        gerecht.gerechtGezondheid(gerechten.get(number - 1).getName());
-        gerecht.voedingswaardesPrinter(gerechten.get(number - 1).getName());
+        gerechtInformatie.GerechtSportMaaltijd(gerechten.get(number - 1).getName());
+        gerechtInformatie.gerechtGezondheid(gerechten.get(number - 1).getName());
+        gerechtInformatie.voedingswaardesPrinter(gerechten.get(number - 1).getName());
     }
 
     public ArrayList<GerechtUitprinter> getGerechtOptiesLijst(String typeGerecht) {

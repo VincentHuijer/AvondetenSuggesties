@@ -70,18 +70,18 @@ class TestClass {
 
     @Test
     public void sportMaaltijdPrinterTest() {
-        Gerecht gerecht = new Gerecht();
+GerechtInformatie gerechtInformatie = new GerechtInformatie();
         String expectedEiwittenLagerDan10 = "slechte maaltijd voor sporten. Dit gerecht bevat nauwelijks proteïne.";
         String expectedEiwitten10OfHogerKleinerDan20 = "Standaard maaltijd voor eiwitten. Neem misschien nog iets om de proteïne op te bouwen.";
         String expectedEiwitten20OfHoger = "Sport maaltijd, rijk aan proteïne. Zeer goed voor de spieropbouw!";
-        assertEquals(expectedEiwittenLagerDan10, gerecht.sportMaaltijdOutput(0));
-        assertEquals(expectedEiwittenLagerDan10, gerecht.sportMaaltijdOutput(1));
-        assertEquals(expectedEiwittenLagerDan10, gerecht.sportMaaltijdOutput(9));
-        assertEquals(expectedEiwitten10OfHogerKleinerDan20, gerecht.sportMaaltijdOutput(10));
-        assertEquals(expectedEiwitten10OfHogerKleinerDan20, gerecht.sportMaaltijdOutput(11));
-        assertEquals(expectedEiwitten10OfHogerKleinerDan20, gerecht.sportMaaltijdOutput(19));
-        assertEquals(expectedEiwitten20OfHoger, gerecht.sportMaaltijdOutput(20));
-        assertEquals(expectedEiwitten20OfHoger, gerecht.sportMaaltijdOutput(21));
+        assertEquals(expectedEiwittenLagerDan10, gerechtInformatie.sportMaaltijdOutput(0));
+        assertEquals(expectedEiwittenLagerDan10, gerechtInformatie.sportMaaltijdOutput(1));
+        assertEquals(expectedEiwittenLagerDan10, gerechtInformatie.sportMaaltijdOutput(9));
+        assertEquals(expectedEiwitten10OfHogerKleinerDan20, gerechtInformatie.sportMaaltijdOutput(10));
+        assertEquals(expectedEiwitten10OfHogerKleinerDan20, gerechtInformatie.sportMaaltijdOutput(11));
+        assertEquals(expectedEiwitten10OfHogerKleinerDan20, gerechtInformatie.sportMaaltijdOutput(19));
+        assertEquals(expectedEiwitten20OfHoger, gerechtInformatie.sportMaaltijdOutput(20));
+        assertEquals(expectedEiwitten20OfHoger, gerechtInformatie.sportMaaltijdOutput(21));
     }
 
     /**
@@ -93,10 +93,10 @@ class TestClass {
      **/
     @Test
     public void testControleerGerechtGezondOfOngezond() {
-        Gerecht gerecht = new Gerecht();
-        Assert.assertFalse(gerecht.GerechtGezondOfOngezondControle(20, 30, false));
-        Assert.assertTrue(gerecht.GerechtGezondOfOngezondControle(40, 30, false));
-        Assert.assertTrue(gerecht.GerechtGezondOfOngezondControle(40, 60, false));
-        Assert.assertFalse(gerecht.GerechtGezondOfOngezondControle(40, 60, true));
+        GerechtInformatie gerechtInformatie = new GerechtInformatie();
+        Assert.assertFalse(gerechtInformatie.GerechtGezondOfOngezondControle(20, 30, false));
+        Assert.assertTrue(gerechtInformatie.GerechtGezondOfOngezondControle(40, 30, false));
+        Assert.assertTrue(gerechtInformatie.GerechtGezondOfOngezondControle(40, 60, false));
+        Assert.assertFalse(gerechtInformatie.GerechtGezondOfOngezondControle(40, 60, true));
     }
 }
