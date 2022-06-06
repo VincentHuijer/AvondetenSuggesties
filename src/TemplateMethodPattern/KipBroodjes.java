@@ -6,7 +6,6 @@ public abstract class KipBroodjes {
         addGroente();
         addSaus();
     }
-
     abstract void addVlees();
 
     abstract void addGroente();
@@ -15,6 +14,3 @@ public abstract class KipBroodjes {
 
     public abstract String getName();
 }
-
-
-

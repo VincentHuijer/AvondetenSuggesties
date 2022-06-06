@@ -29,11 +29,3 @@ class GerechtUitprinter {
         return type;
     }
 }
-
-
-
-
-
-
-
-

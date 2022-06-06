@@ -232,7 +232,7 @@ public class Gerecht {
         }
     }
 
-    public void controleerGerechtSportMaaltijd(String gerechtNaam) {
+    public void GerechtSportMaaltijd(String gerechtNaam) {
         double eiwitten = new VoedingswaardenCalculator(zoekGerecht(gerechtNaam)).eiwitten();
         System.out.println(sportMaaltijdOutput(eiwitten));
     }

@@ -18,12 +18,3 @@ class VegetarischGerecht extends GerechtUitprinter {
         return prijs * 1.09;
     }
 }
-
-
-
-
-
-
-
-
-

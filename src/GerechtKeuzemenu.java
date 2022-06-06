@@ -6,7 +6,7 @@ public class GerechtKeuzemenu {
 
     public GerechtKeuzemenu() {
         ArrayList<GerechtUitprinter> gerechten = new ArrayList<>();
-        gerechtOpties();
+        gerechtKeuzeOpties();
         Gerecht gerecht = new Gerecht();
         Scanner scanner = new Scanner(System.in);
 
@@ -36,10 +36,9 @@ public class GerechtKeuzemenu {
         for (int i = 0; i < gerecht.zoekGerecht(gerechten.get(number - 1).getName()).getIngredienten().size(); i++) {
             System.out.println(gerecht.zoekGerecht(gerechten.get(number - 1).getName()).getIngredienten().get(i).getNaam());
         }
-        gerecht.controleerGerechtSportMaaltijd(gerechten.get(number - 1).getName());
+        gerecht.GerechtSportMaaltijd(gerechten.get(number - 1).getName());
         gerecht.gerechtGezondheid(gerechten.get(number - 1).getName());
         gerecht.voedingswaardesPrinter(gerechten.get(number - 1).getName());
-
     }
 
     public ArrayList<GerechtUitprinter> getGerechtOptiesLijst(String typeGerecht) {
@@ -54,7 +53,7 @@ public class GerechtKeuzemenu {
     }
 
 
-    public void gerechtOpties() {
+    public void gerechtKeuzeOpties() {
         //pasta
         gerechten.add(new PastaGerecht("Lasagne", "Pasta-gerecht", 3.23));
         gerechten.add(new PastaGerecht("Penne-alla-Vodka", "Pasta-gerecht", 6.32));
