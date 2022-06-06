@@ -5,14 +5,14 @@ public class GerechtInformatie {
         double koolhydraten = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam)).koolhydraten();
         boolean groente = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam)).bevatGroente();
 
-        if (GerechtGezondOfOngezondControle(vetten, koolhydraten, groente)) {
+        if (gerechtGezondOfOngezondControle(vetten, koolhydraten, groente)) {
             System.out.println("Dit gerecht is ongezond! Het gerecht bevat geen groente en bevat veel vetten of koolhydraten.");
         } else {
             System.out.println("Dit gerecht is gezond! Het gerecht bevat groente en bevat weinig vetten of koolhydraten.");
         }
     }
 
-    public boolean GerechtGezondOfOngezondControle(double vetten, double koolhydraten, boolean groente) {
+    public boolean gerechtGezondOfOngezondControle(double vetten, double koolhydraten, boolean groente) {
         if ((vetten > 30 || koolhydraten > 50) && !groente) {
             //Als een gerecht meer dan 30 gram vet bevat OF meer dan 50 gram koolhydraten EN het bevat geen groente is het ongezond!
             return true;
@@ -22,7 +22,7 @@ public class GerechtInformatie {
         }
     }
 
-    public void GerechtSportMaaltijd(String gerechtNaam) {
+    public void gerechtSportMaaltijd(String gerechtNaam) {
         double eiwitten = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam)).eiwitten();
         System.out.println(sportMaaltijdOutput(eiwitten));
     }

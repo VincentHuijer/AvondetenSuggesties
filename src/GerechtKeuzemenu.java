@@ -37,7 +37,7 @@ public class GerechtKeuzemenu {
         for (int i = 0; i < gerecht.zoekGerecht(gerechten.get(number - 1).getName()).getIngredienten().size(); i++) {
             System.out.println(gerecht.zoekGerecht(gerechten.get(number - 1).getName()).getIngredienten().get(i).getNaam());
         }
-        gerechtInformatie.GerechtSportMaaltijd(gerechten.get(number - 1).getName());
+        gerechtInformatie.gerechtSportMaaltijd(gerechten.get(number - 1).getName());
         gerechtInformatie.gerechtGezondheid(gerechten.get(number - 1).getName());
         gerechtInformatie.voedingswaardesPrinter(gerechten.get(number - 1).getName());
     }

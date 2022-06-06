@@ -1,11 +1,11 @@
 package AbstractFactoryPattern;
 
-public class Menu {
+public class Producten {
     private String name;
     private double prijs;
     private String specialeActie;
 
-    public Menu(String name, double prijs, String specialeActie) {
+    public Producten(String name, double prijs, String specialeActie) {
         this.name = name;
         this.prijs = prijs;
         this.specialeActie = specialeActie;

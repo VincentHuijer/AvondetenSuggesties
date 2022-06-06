@@ -94,9 +94,9 @@ GerechtInformatie gerechtInformatie = new GerechtInformatie();
     @Test
     public void testControleerGerechtGezondOfOngezond() {
         GerechtInformatie gerechtInformatie = new GerechtInformatie();
-        Assert.assertFalse(gerechtInformatie.GerechtGezondOfOngezondControle(20, 30, false));
-        Assert.assertTrue(gerechtInformatie.GerechtGezondOfOngezondControle(40, 30, false));
-        Assert.assertTrue(gerechtInformatie.GerechtGezondOfOngezondControle(40, 60, false));
-        Assert.assertFalse(gerechtInformatie.GerechtGezondOfOngezondControle(40, 60, true));
+        Assert.assertFalse(gerechtInformatie.gerechtGezondOfOngezondControle(20, 30, false));
+        Assert.assertTrue(gerechtInformatie.gerechtGezondOfOngezondControle(40, 30, false));
+        Assert.assertTrue(gerechtInformatie.gerechtGezondOfOngezondControle(40, 60, false));
+        Assert.assertFalse(gerechtInformatie.gerechtGezondOfOngezondControle(40, 60, true));
     }
 }
