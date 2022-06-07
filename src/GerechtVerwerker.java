@@ -1,10 +1,10 @@
-class GerechtUitprinter {
+class GerechtVerwerker {
     public double prijs;
     public String name;
     public String type;
 
     //naam van het gerecht, type gerecht(pasta/rijst/etc), prijs van gerecht
-    public GerechtUitprinter(String name, String type, Double prijs) {
+    public GerechtVerwerker(String name, String type, Double prijs) {
         this.name = name;
         this.prijs = prijs;
         this.type = type;

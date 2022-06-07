@@ -1,4 +1,4 @@
-class PastaGerecht extends GerechtUitprinter {
+class PastaGerecht extends GerechtVerwerker {
 
     public PastaGerecht(String name, String type, Double prijs) {
         super(name, type, prijs);

@@ -1,4 +1,4 @@
-class VegetarischGerecht extends GerechtUitprinter {
+class VegetarischGerecht extends GerechtVerwerker {
     public VegetarischGerecht(String name, String Type, double prijs) {
         super(name, Type, prijs);
     }

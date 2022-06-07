@@ -1,4 +1,4 @@
-class RijstGerecht extends GerechtUitprinter {
+class RijstGerecht extends GerechtVerwerker {
     public RijstGerecht(String name, String type, double prijs) {
         super(name, type, prijs);
     }

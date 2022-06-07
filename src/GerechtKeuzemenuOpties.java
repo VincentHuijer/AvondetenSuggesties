@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class GerechtKeuzemenuOpties {
-    private static ArrayList<GerechtUitprinter> gerechten = new ArrayList<>();
+    private static ArrayList<GerechtVerwerker> gerechten = new ArrayList<>();
 
-    public static ArrayList<GerechtUitprinter> GerechtKeuzeOpties() {
+    public static ArrayList<GerechtVerwerker> GerechtKeuzeOpties() {
         if (gerechten.isEmpty()){
         //pasta
         gerechten.add(new PastaGerecht("Lasagne", "Pasta-gerecht", 3.23));
@@ -32,11 +32,11 @@ public class GerechtKeuzemenuOpties {
         } return gerechten;
 
     }
-    public ArrayList<GerechtUitprinter> getGerechtOptiesLijst(String typeGerecht) {
-        ArrayList<GerechtUitprinter> arrayToevoegen = new ArrayList<>();
-        for (GerechtUitprinter gerechtUitprinter : GerechtKeuzeOpties()) {
-            if (gerechtUitprinter.getType().equals(typeGerecht)) {
-                arrayToevoegen.add(gerechtUitprinter);
+    public ArrayList<GerechtVerwerker> getGerechtOptiesLijst(String typeGerecht) {
+        ArrayList<GerechtVerwerker> arrayToevoegen = new ArrayList<>();
+        for (GerechtVerwerker gerechtVerwerker : GerechtKeuzeOpties()) {
+            if (gerechtVerwerker.getType().equals(typeGerecht)) {
+                arrayToevoegen.add(gerechtVerwerker);
             }
         }
 

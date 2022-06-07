@@ -15,11 +15,11 @@ class TestClass {
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
 
-        ArrayList<GerechtUitprinter> pastaGerechten = gerechtKeuzemenuOpties.getGerechtOptiesLijst("Pasta-gerecht");
+        ArrayList<GerechtVerwerker> pastaGerechten = gerechtKeuzemenuOpties.getGerechtOptiesLijst("Pasta-gerecht");
         String opties = "";
         int teller = 0;
-        for (GerechtUitprinter gerechtUitprinter : pastaGerechten) {
-            opties += (++teller + ". " + gerechtUitprinter.getName() + " ");
+        for (GerechtVerwerker gerechtVerwerker : pastaGerechten) {
+            opties += (++teller + ". " + gerechtVerwerker.getName() + " ");
         }
         String expected = "[Pasta] Heeft u trek in 1. Lasagne 2. Penne-alla-Vodka 3. Spaghetti 4. Tagliatelle 5. Macaroni ";
         String actual = "[Pasta] Heeft u trek in " + opties;
@@ -33,14 +33,14 @@ class TestClass {
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
         GerechtKeuzemenuOpties gerechtKeuzemenuOpties = new GerechtKeuzemenuOpties();
-        ArrayList<GerechtUitprinter> vegetarischGerechten = gerechtKeuzemenuOpties.getGerechtOptiesLijst("Vegetarisch-gerecht");
+        ArrayList<GerechtVerwerker> vegetarischGerechten = gerechtKeuzemenuOpties.getGerechtOptiesLijst("Vegetarisch-gerecht");
         String opties = "";
         int teller = 0;
-        for (GerechtUitprinter gerechtUitprinter : vegetarischGerechten) {
-            opties += (++teller + ". " + gerechtUitprinter.getName() + " ");
+        for (GerechtVerwerker gerechtVerwerker : vegetarischGerechten) {
+            opties += (++teller + ". " + gerechtVerwerker.getName() + " ");
         }
         Integer number = Integer.valueOf(input.split("\n")[2]);
-        GerechtUitprinter output = vegetarischGerechten.get(number - 1);
+        GerechtVerwerker output = vegetarischGerechten.get(number - 1);
 
         String expected = "U koos voor Stamppot van het type Vegetarisch-gerecht. \n" +
                 "dit gerecht zou rond de 2,59€ kosten om te bereiden.";
