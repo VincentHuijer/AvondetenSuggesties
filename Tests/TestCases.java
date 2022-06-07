@@ -10,12 +10,12 @@ import static org.junit.Assert.assertEquals;
 class TestClass {
     @Test
     public void TestGerechtkeuzeOpties() {
+        GerechtKeuzemenuOpties gerechtKeuzemenuOpties = new GerechtKeuzemenuOpties();
         String input = "1\n1\n1\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
-        GerechtKeuzemenu gerechtKeuzemenu = new GerechtKeuzemenu();
 
-        ArrayList<GerechtUitprinter> pastaGerechten = gerechtKeuzemenu.getGerechtOptiesLijst("Pasta-gerecht");
+        ArrayList<GerechtUitprinter> pastaGerechten = gerechtKeuzemenuOpties.getGerechtOptiesLijst("Pasta-gerecht");
         String opties = "";
         int teller = 0;
         for (GerechtUitprinter gerechtUitprinter : pastaGerechten) {
@@ -32,8 +32,8 @@ class TestClass {
         String input = "1\n4\n3\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
-        GerechtKeuzemenu gerechtKeuzemenu = new GerechtKeuzemenu();
-        ArrayList<GerechtUitprinter> vegetarischGerechten = gerechtKeuzemenu.getGerechtOptiesLijst("Vegetarisch-gerecht");
+        GerechtKeuzemenuOpties gerechtKeuzemenuOpties = new GerechtKeuzemenuOpties();
+        ArrayList<GerechtUitprinter> vegetarischGerechten = gerechtKeuzemenuOpties.getGerechtOptiesLijst("Vegetarisch-gerecht");
         String opties = "";
         int teller = 0;
         for (GerechtUitprinter gerechtUitprinter : vegetarischGerechten) {

@@ -18,5 +18,3 @@ class RijstGerecht extends GerechtUitprinter {
         return prijs * 1.21;
     }
 }
-
-

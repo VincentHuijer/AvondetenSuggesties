@@ -39,11 +39,11 @@ public class GerechtInformatie {
     }
 
     public void voedingswaardesPrinter(String gerechtNaam) {
+       VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam));
+
         System.out.printf("Eiwitten: %.2f%n" +
                         "Vetten: %.2f%n" +
                         "Koolhydraten: %.2f%n",
-                new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam)).eiwitten(),
-                new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam)).vetten(),
-                new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam)).koolhydraten());
+                voedingswaardenCalculator.eiwitten(), voedingswaardenCalculator.vetten(), voedingswaardenCalculator.koolhydraten());
     }
 }
