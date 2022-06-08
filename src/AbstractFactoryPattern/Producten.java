@@ -1,9 +1,9 @@
 package AbstractFactoryPattern;
 
 public class Producten {
-    private String name;
-    private double prijs;
-    private String specialeActie;
+    private final String name;
+    private final double prijs;
+    private final String specialeActie;
 
     public Producten(String name, double prijs, String specialeActie) {
         this.name = name;

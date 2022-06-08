@@ -11,7 +11,7 @@ class TestClass {
     @Test
     public void TestGerechtkeuzeOpties() {
         GerechtKeuzemenuOpties gerechtKeuzemenuOpties = new GerechtKeuzemenuOpties();
-        String input = "1\n1\n1\n";
+        String input = "1\npasta\n1\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
 
@@ -29,7 +29,7 @@ class TestClass {
 
     @Test
     public void testGerechtKeuzemenuGerechtKiezen() {
-        String input = "1\n4\n3\n";
+        String input = "1\nvegetarisch\n3\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
         GerechtKeuzemenuOpties gerechtKeuzemenuOpties = new GerechtKeuzemenuOpties();

@@ -1,5 +1,5 @@
 public class VoedingswaardenCalculator {
-    private Gerecht gerecht;
+    private final Gerecht gerecht;
 
     public VoedingswaardenCalculator(Gerecht gerecht) {
         this.gerecht = gerecht;

@@ -1,30 +1,25 @@
 public class GerechtInformatie {
     Gerecht gerecht = new Gerecht();
-    public void gerechtGezondheid(String gerechtNaam) {
-        double vetten = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam)).vetten();
-        double koolhydraten = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam)).koolhydraten();
-        boolean groente = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam)).bevatGroente();
 
-        if (gerechtGezondOfOngezondControle(vetten, koolhydraten, groente)) {
+    public void gerechtGezondheid(String gerechtNaam) {
+        VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam));
+        double vetten = voedingswaardenCalculator.vetten();
+        double koolhydraten = voedingswaardenCalculator.koolhydraten();
+        boolean groente = voedingswaardenCalculator.bevatGroente();
+
+        if (gerechtGezondOfOngezondControle(vetten, koolhydraten, groente))
             System.out.println("Dit gerecht is ongezond! Het gerecht bevat geen groente en bevat veel vetten of koolhydraten.");
-        } else {
+        else
             System.out.println("Dit gerecht is gezond! Het gerecht bevat groente en bevat weinig vetten of koolhydraten.");
-        }
     }
 
     public boolean gerechtGezondOfOngezondControle(double vetten, double koolhydraten, boolean groente) {
-        if ((vetten > 30 || koolhydraten > 50) && !groente) {
-            //Als een gerecht meer dan 30 gram vet bevat OF meer dan 50 gram koolhydraten EN het bevat geen groente is het ongezond!
-            return true;
-        } else {
-            //Als een gerecht minder dan 30 gram vet bevat OF minder dan 50 gram koolhydraten EN het bevat groente is het gezond!
-            return false;
-        }
+        return (vetten > 30 || koolhydraten > 50) && !groente;//Als een gerecht meer dan 30 gram vet bevat OF meer dan 50 gram koolhydraten EN het bevat geen groente is het ongezond!
     }
 
     public void gerechtSportMaaltijd(String gerechtNaam) {
-        double eiwitten = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam)).eiwitten();
-        System.out.println(sportMaaltijdOutput(eiwitten));
+        VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam));
+        System.out.println(sportMaaltijdOutput(voedingswaardenCalculator.eiwitten()));
     }
 
     public String sportMaaltijdOutput(double eiwitten) {
@@ -39,11 +34,7 @@ public class GerechtInformatie {
     }
 
     public void voedingswaardesPrinter(String gerechtNaam) {
-       VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam));
-
-        System.out.printf("Eiwitten: %.2f%n" +
-                        "Vetten: %.2f%n" +
-                        "Koolhydraten: %.2f%n",
-                voedingswaardenCalculator.eiwitten(), voedingswaardenCalculator.vetten(), voedingswaardenCalculator.koolhydraten());
+        VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam));
+        System.out.printf("Eiwitten: %.2f%nVetten: %.2f%nKoolhydraten: %.2f%n", voedingswaardenCalculator.eiwitten(), voedingswaardenCalculator.vetten(), voedingswaardenCalculator.koolhydraten());
     }
 }

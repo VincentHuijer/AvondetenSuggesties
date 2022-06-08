@@ -1,5 +1,5 @@
 public class PizzaKeuzemenuInputsVerwerken {
-    public String grootte = "";
+    public String grootte;
     public String vleesOpPizza;
     public String kaaskorst;
     public String studentenpas;
@@ -12,38 +12,33 @@ public class PizzaKeuzemenuInputsVerwerken {
     }
 
     public String pizzaSize() {
-        if (grootte.equals("1")) { //optie 1. is small
-            grootte = "small";
-        } else if (grootte.equals("2")) { //optie 2. is medium
-            grootte = "medium";
-        } else if (grootte.equals("3")) { //optie 3 = large
-            grootte = "large";
+        switch (grootte) {
+            case "1":  //optie 1. is small
+                grootte = "small";
+                break;
+            case "2":  //optie 2. is medium
+                grootte = "medium";
+                break;
+            case "3":  //optie 3 = large
+                grootte = "large";
+                break;
         }
         return grootte;
     }
 
     //krijgt een input mee voor vlees op pizza
     public boolean pizzaMeat() {
-        if (vleesOpPizza.equals("1")) {
-            return true;
-        }
-        return false;
+        return vleesOpPizza.equals("1");
     }
 
     //krijgt een input mee voor standaard deeg of deeg met kaaskorst
     public boolean pizzaCheeseCrust() {
-        if (kaaskorst.equals("2")) {
-            return true;
-        }
-        return false;
+        return kaaskorst.equals("2");
     }
 
     //krijgt een input mee of de gebruiker een studentenpas heeft.
     public boolean studentpas() {
-        if (studentenpas.equals("1")) {
-            return true;
-        }
-        return false;
+        return studentenpas.equals("1");
     }
 
     public void berekenPizzaPrijs(){

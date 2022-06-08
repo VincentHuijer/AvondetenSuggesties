@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class PizzaKeuzemenu {
 
     public PizzaKeuzemenu() {
-        Pizza pizza = new Pizza();
         Scanner scanner = new Scanner(System.in);
         System.out.println("welke grootte wilt uw pizza?" +
                 " Kies uit de nummers 1 t/m 3." +
