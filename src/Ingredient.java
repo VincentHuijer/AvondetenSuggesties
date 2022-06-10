@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Ingredient {
 
     private String naam;
-    private double gewicht;
     private double vet;
     private double koolhydraten;
     private double eiwitten;

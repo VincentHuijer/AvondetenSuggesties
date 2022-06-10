@@ -2,16 +2,19 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GerechtKeuzemenu {
+    Scanner scanner = new Scanner(System.in);
 
     public GerechtKeuzemenu() {
+        //TODO GerechtKeuzemenu alleen verantwoordelijk maken voor printen van vragen en antwoorden.
+        System.out.println("Waar heeft u trek in? Voer de naam van het type gerecht in\npasta\nrijst\ndeeg\nvegetarisch");
+        String gerechtTypeInput = scanner.nextLine();
+        gerechtKeuzeKiezen(gerechtTypeInput);
+    }
+
+    public void gerechtKeuzeKiezen(String gerechtTypeInput) {// gerechtTypeInput geeft type gerecht aan(Pasta, Rijst, Deeg, Vegetarisch)
         GerechtKeuzemenuOpties gerechtKeuzemenuOpties = new GerechtKeuzemenuOpties();
         Gerecht gerecht = new Gerecht();
-        GerechtInformatie gerechtInformatie = new GerechtInformatie();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Waar heeft u trek in? Voer de naam van het type gerecht in\npasta\nrijst\ndeeg\nvegetarisch");
-        String gerechtTypeInput = scanner.nextLine(); // met gerechtTypeInput geef je het type gerecht aan(Pasta, Rijst, Deeg, Vegetarisch)
         ArrayList<GerechtVerwerker> optiesLijst = gerechtKeuzemenuOpties.getGerechtOptiesLijst(gerechtTypeInput);
-        //hier kies ik het gerecht na het kiezen van de typen.
         StringBuilder opties = new StringBuilder();
         int teller = 0;
         for (GerechtVerwerker gerechtVerwerker : optiesLijst)
@@ -19,11 +22,16 @@ public class GerechtKeuzemenu {
         System.out.println("Waar heeft u trek in? Voer het getal van het gerecht in\n" + opties);
         int gerechtInput = scanner.nextInt();
         System.out.printf("%s%nDit gerecht bevat de volgende ingrediënten%n", optiesLijst.get(gerechtInput - 1));
-        for (int i = 0; i < gerecht.zoekGerecht(optiesLijst.get(gerechtInput - 1).getName()).getIngredienten().size(); i++) {
+        for (int i = 0; i < gerecht.zoekGerecht(optiesLijst.get(gerechtInput - 1).getName()).getIngredienten().size(); i++)
             System.out.println(gerecht.zoekGerecht(optiesLijst.get(gerechtInput - 1).getName()).getIngredienten().get(i).getNaam());
-        }//Thiier verwerk ik de informatie van het gerecht
-        gerechtInformatie.gerechtSportMaaltijd(optiesLijst.get(gerechtInput - 1).getName());
-        gerechtInformatie.gerechtGezondheid(optiesLijst.get(gerechtInput - 1).getName());
-        gerechtInformatie.voedingswaardesPrinter(optiesLijst.get(gerechtInput - 1).getName());
+        String gekozenGerecht = optiesLijst.get(gerechtInput - 1).getName();
+        gerechtInformatie(gekozenGerecht);
+    }
+
+    public void gerechtInformatie(String gerecht) {
+        GerechtInformatie gerechtInformatie = new GerechtInformatie();
+        gerechtInformatie.gerechtSportMaaltijd(gerecht);
+        gerechtInformatie.gerechtGezondheid(gerecht);
+        gerechtInformatie.voedingswaardesPrinter(gerecht);
     }
 }
