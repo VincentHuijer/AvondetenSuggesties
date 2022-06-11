@@ -39,8 +39,6 @@ public class GerechtKeuzemenuOpties {
                 arrayToevoegen.add(gerechtVerwerker);
             }
         }
-
         return arrayToevoegen;
     }
-
 }

@@ -1,15 +1,12 @@
 import java.util.ArrayList;
 
 public class Ingredient {
-
-    private String naam;
-    private double vet;
-    private double koolhydraten;
-    private double eiwitten;
-    private boolean groente;
-
-
-    private static ArrayList<Ingredient> alleIngredienten = new ArrayList<>();
+    private final String naam;
+    private final double vet;
+    private final double koolhydraten;
+    private final double eiwitten;
+    private final boolean groente;
+    private static final ArrayList<Ingredient> alleIngredienten = new ArrayList<>();
 
     Ingredient(String naam, double vet, double koolhydraten, double eiwitten, boolean groente) {
         this.naam = naam;

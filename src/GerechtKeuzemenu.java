@@ -5,13 +5,14 @@ public class GerechtKeuzemenu {
     Scanner scanner = new Scanner(System.in);
 
     public GerechtKeuzemenu() {
-        //TODO GerechtKeuzemenu alleen verantwoordelijk maken voor printen van vragen en antwoorden.
+        //TODO Ik wil niet de naam van het soort gerecht als een string meegeven. Ik wil eht dynamic maken door het programma
+        //TODO ieder soort gerechtn laten opnoemen en met een nummer kunnen kiezen wat je wilt
         System.out.println("Waar heeft u trek in? Voer de naam van het type gerecht in\npasta\nrijst\ndeeg\nvegetarisch");
         String gerechtTypeInput = scanner.nextLine();
-        gerechtKeuzeKiezen(gerechtTypeInput);
+        gerechtKiezen(gerechtTypeInput);
     }
 
-    public void gerechtKeuzeKiezen(String gerechtTypeInput) {// gerechtTypeInput geeft type gerecht aan(Pasta, Rijst, Deeg, Vegetarisch)
+    public void gerechtKiezen(String gerechtTypeInput) {// gerechtTypeInput geeft type gerecht aan(Pasta, Rijst, Deeg, Vegetarisch)
         GerechtKeuzemenuOpties gerechtKeuzemenuOpties = new GerechtKeuzemenuOpties();
         Gerecht gerecht = new Gerecht();
         ArrayList<GerechtVerwerker> optiesLijst = gerechtKeuzemenuOpties.getGerechtOptiesLijst(gerechtTypeInput);
@@ -21,9 +22,8 @@ public class GerechtKeuzemenu {
             opties.append(++teller).append(".").append(gerechtVerwerker.getName()).append("\n");
         System.out.println("Waar heeft u trek in? Voer het getal van het gerecht in\n" + opties);
         int gerechtInput = scanner.nextInt();
-        System.out.printf("%s%nDit gerecht bevat de volgende ingrediënten%n", optiesLijst.get(gerechtInput - 1));
-        for (int i = 0; i < gerecht.zoekGerecht(optiesLijst.get(gerechtInput - 1).getName()).getIngredienten().size(); i++)
-            System.out.println(gerecht.zoekGerecht(optiesLijst.get(gerechtInput - 1).getName()).getIngredienten().get(i).getNaam());
+        System.out.printf("%s%nDit gerecht bevat de volgende ingrediënten:%n", optiesLijst.get(gerechtInput - 1));
+        gerecht.zoekGerecht(optiesLijst.get(gerechtInput - 1).getName()).getIngredienten().stream().map(Ingredient::getNaam).forEach(System.out::println);
         String gekozenGerecht = optiesLijst.get(gerechtInput - 1).getName();
         gerechtInformatie(gekozenGerecht);
     }

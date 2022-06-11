@@ -48,14 +48,21 @@ class TestClass {
         assertEquals(expected, actual);
     }
 */
-    @Test
-    public void testPastaGerechtEnBTW() {
-        PastaGerecht pastaGerecht = new PastaGerecht("testLasagne", "Pasta-gerecht", 1.00);
-        String expected = "U koos voor testLasagne van het type Pasta-gerecht. \n" +
-                "dit gerecht zou rond de 1,21€ kosten om te bereiden.";
-        String actual = String.valueOf(pastaGerecht);
-        Assert.assertEquals(expected, actual);
-    }
+   @Test
+   public void testGerechten() {
+       PastaGerecht pastaGerecht = new PastaGerecht("testLasagne", "Pasta-gerecht", 1.00);
+       String expectedPasta = "U koos voor testLasagne van het type Pasta-gerecht. \n" +
+               "dit gerecht zou rond de 1,21€ kosten om te bereiden.";
+       String actualPasta = String.valueOf(pastaGerecht);
+       Assert.assertEquals(expectedPasta, actualPasta);
+
+       VegetarischGerecht vegetarischGerecht = new VegetarischGerecht("testVegetarisch", "Vegetarisch-gerecht", 1.00);
+       String expectedVegetarisch = "U koos voor testVegetarisch van het type Vegetarisch-gerecht. \n" +
+               "dit gerecht zou rond de 1,09€ kosten om te bereiden.";
+       String actualVegetarisch = String.valueOf(vegetarischGerecht);
+       Assert.assertEquals(expectedVegetarisch, actualVegetarisch);
+
+   }
 
     @Test
     public void getPizzaPrijsTest() {
