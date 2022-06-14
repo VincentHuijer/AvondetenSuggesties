@@ -8,46 +8,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 
 class TestClass {
-   /* @Test
-    public void TestGerechtkeuzeOpties() {
-        GerechtKeuzemenuOpties gerechtKeuzemenuOpties = new GerechtKeuzemenuOpties();
-        String input = "pasta\n1\n1\n";
-        ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
-        System.setIn(byteStream);
-
-        ArrayList<GerechtVerwerker> optiesLijst = gerechtKeuzemenuOpties.getGerechtOptiesLijst("pasta");
-        StringBuilder opties = new StringBuilder();
-        int teller = 0;
-        for (GerechtVerwerker gerechtVerwerker : optiesLijst)
-            opties.append(++teller).append(".").append(gerechtVerwerker.getName()).append("\n");
-       // System.out.println("Waar heeft u trek in? Voer het getal van het gerecht in\n" + opties);
-        String expected = "[Pasta] Heeft u trek in 1. Lasagne 2. Penne-alla-Vodka 3. Spaghetti 4. Tagliatelle 5. Macaroni ";
-        String actual = "[Pasta] Heeft u trek in " + opties;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testGerechtKeuzemenuGerechtKiezen() {
-        String input = "1\nvegetarisch\n3\n";
-        ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
-        System.setIn(byteStream);
-        GerechtKeuzemenuOpties gerechtKeuzemenuOpties = new GerechtKeuzemenuOpties();
-        ArrayList<GerechtVerwerker> vegetarischGerechten = gerechtKeuzemenuOpties.getGerechtOptiesLijst("Vegetarisch-gerecht");
-        String opties = "";
-        int teller = 0;
-        for (GerechtVerwerker gerechtVerwerker : vegetarischGerechten) {
-            opties += (++teller + ". " + gerechtVerwerker.getName() + " ");
-        }
-        Integer number = Integer.valueOf(input.split("\n")[2]);
-        GerechtVerwerker output = vegetarischGerechten.get(number - 1);
-
-        String expected = "U koos voor Stamppot van het type Vegetarisch-gerecht. \n" +
-                "dit gerecht zou rond de 2,59€ kosten om te bereiden.";
-        String actual = String.valueOf(output);
-        assertEquals(expected, actual);
-    }
-*/
+  
    @Test
    public void testGerechten() {
        PastaGerecht pastaGerecht = new PastaGerecht("testLasagne", "Pasta-gerecht", 1.00);
