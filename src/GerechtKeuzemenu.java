@@ -5,8 +5,6 @@ public class GerechtKeuzemenu {
     Scanner scanner = new Scanner(System.in);
 
     public GerechtKeuzemenu() {
-        //TODO Ik wil niet de naam van het soort gerecht als een string meegeven. Ik wil eht dynamic maken door het programma
-        //TODO ieder soort gerechtn laten opnoemen en met een nummer kunnen kiezen wat je wilt
         System.out.println("Waar heeft u trek in? Voer de naam van het type gerecht in\npasta\nrijst\ndeeg\nvegetarisch");
         String gerechtTypeInput = scanner.nextLine();
         gerechtKiezen(gerechtTypeInput);
