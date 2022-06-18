@@ -1,8 +1,7 @@
 public class GerechtInformatie {
-    Gerecht gerecht = new Gerecht();
 
     public void gerechtGezondheid(String gerechtNaam) {
-        VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam));
+        VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(GerechtSeeder.zoekGerecht(gerechtNaam));
         double vetten = voedingswaardenCalculator.vetten();
         double koolhydraten = voedingswaardenCalculator.koolhydraten();
         boolean groente = voedingswaardenCalculator.bevatGroente();
@@ -18,7 +17,7 @@ public class GerechtInformatie {
     }
 
     public void gerechtSportMaaltijd(String gerechtNaam) {
-        VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam));
+        VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(GerechtSeeder.zoekGerecht(gerechtNaam));
         System.out.println(sportMaaltijdOutput(voedingswaardenCalculator.eiwitten()));
     }
 
@@ -34,7 +33,7 @@ public class GerechtInformatie {
     }
 
     public void voedingswaardesPrinter(String gerechtNaam) {
-        VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam));
+        VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(GerechtSeeder.zoekGerecht(gerechtNaam));
         System.out.printf("Eiwitten: %.2f%nVetten: %.2f%nKoolhydraten: %.2f%n", voedingswaardenCalculator.eiwitten(), voedingswaardenCalculator.vetten(), voedingswaardenCalculator.koolhydraten());
     }
 }

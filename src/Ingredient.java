@@ -16,7 +16,37 @@ public class Ingredient {
         this.groente = groente;
     }
 
-    public static ArrayList<Ingredient> getIngredientenLijst() {
+
+    public String getNaam() {
+        return naam;
+    }
+
+    public double getVet() {
+        return vet;
+    }
+
+    public double getKoolhydraten() {
+        return koolhydraten;
+    }
+
+    public double getEiwitten() {
+        return eiwitten;
+    }
+
+    public boolean isGroente() {
+        return groente;
+    }
+
+    public static Ingredient zoekIngredient(String naam) {
+        for (Ingredient ingredient : getIngredientenSeeder()) {
+            if (ingredient.getNaam().equals(naam)) {
+                return ingredient;
+            }
+        }
+        return null;
+    }
+
+    public static ArrayList<Ingredient> getIngredientenSeeder() {
         if (alleIngredienten.size() == 0) {
             alleIngredienten.add(new Ingredient("kip", 14, 0, 20, false));
             alleIngredienten.add(new Ingredient("pasta", 1.1, 3.2, 10, false));
@@ -58,36 +88,6 @@ public class Ingredient {
             alleIngredienten.add(new Ingredient("prei", 0.3, 14, 1.5, true));
         }
         return alleIngredienten;
-    }
-
-
-    public static Ingredient zoekIngredient(String naam) {
-        for (Ingredient ingredient : getIngredientenLijst()) {
-            if (ingredient.getNaam().equals(naam)) {
-                return ingredient;
-            }
-        }
-        return null;
-    }
-
-    public String getNaam() {
-        return naam;
-    }
-
-    public double getVet() {
-        return vet;
-    }
-
-    public double getKoolhydraten() {
-        return koolhydraten;
-    }
-
-    public double getEiwitten() {
-        return eiwitten;
-    }
-
-    public boolean isGroente() {
-        return groente;
     }
 }
 
