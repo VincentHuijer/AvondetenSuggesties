@@ -1,7 +1,11 @@
-public class VoedingswaardenCalculator {
+package App;
+
+import App.Gerecht;
+
+public class GerechtWaardenCalculator {
     private final Gerecht gerecht;
 
-    public VoedingswaardenCalculator(Gerecht gerecht) {
+    public GerechtWaardenCalculator(Gerecht gerecht) {
         this.gerecht = gerecht;
     }
 
@@ -43,5 +47,14 @@ public class VoedingswaardenCalculator {
             }
         }
         return false;
+    }
+
+    public double prijs(){
+        double prijsteller = 0;
+
+        for (int i = 0; i < gerecht.getIngredienten().size(); i++) {
+            prijsteller += gerecht.getIngredienten().get(i).getPrijs();
+        }
+        return prijsteller;
     }
 }

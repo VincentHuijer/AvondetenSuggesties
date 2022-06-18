@@ -1,3 +1,5 @@
+package App;
+
 class GerechtVerwerker {
     public double prijs;
     public String name;

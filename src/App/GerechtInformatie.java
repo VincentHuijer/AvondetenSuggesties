@@ -1,11 +1,12 @@
+package App;
+
 public class GerechtInformatie {
-    Gerecht gerecht = new Gerecht();
 
     public void gerechtGezondheid(String gerechtNaam) {
-        VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam));
-        double vetten = voedingswaardenCalculator.vetten();
-        double koolhydraten = voedingswaardenCalculator.koolhydraten();
-        boolean groente = voedingswaardenCalculator.bevatGroente();
+        GerechtWaardenCalculator gerechtWaardenCalculator = new GerechtWaardenCalculator(Gerecht.zoekGerecht(gerechtNaam));
+        double vetten = gerechtWaardenCalculator.vetten();
+        double koolhydraten = gerechtWaardenCalculator.koolhydraten();
+        boolean groente = gerechtWaardenCalculator.bevatGroente();
 
         if (gerechtGezondOfOngezondControle(vetten, koolhydraten, groente))
             System.out.println("Dit gerecht is ongezond! Het gerecht bevat geen groente en bevat veel vetten of koolhydraten.");
@@ -18,8 +19,8 @@ public class GerechtInformatie {
     }
 
     public void gerechtSportMaaltijd(String gerechtNaam) {
-        VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam));
-        System.out.println(sportMaaltijdOutput(voedingswaardenCalculator.eiwitten()));
+        GerechtWaardenCalculator gerechtWaardenCalculator = new GerechtWaardenCalculator(Gerecht.zoekGerecht(gerechtNaam));
+        System.out.println(sportMaaltijdOutput(gerechtWaardenCalculator.eiwitten()));
     }
 
     public String sportMaaltijdOutput(double eiwitten) {
@@ -34,7 +35,7 @@ public class GerechtInformatie {
     }
 
     public void voedingswaardesPrinter(String gerechtNaam) {
-        VoedingswaardenCalculator voedingswaardenCalculator = new VoedingswaardenCalculator(gerecht.zoekGerecht(gerechtNaam));
-        System.out.printf("Eiwitten: %.2f%nVetten: %.2f%nKoolhydraten: %.2f%n", voedingswaardenCalculator.eiwitten(), voedingswaardenCalculator.vetten(), voedingswaardenCalculator.koolhydraten());
+        GerechtWaardenCalculator gerechtWaardenCalculator = new GerechtWaardenCalculator(Gerecht.zoekGerecht(gerechtNaam));
+        System.out.printf("Eiwitten: %.2f%nVetten: %.2f%nKoolhydraten: %.2f%n", gerechtWaardenCalculator.eiwitten(), gerechtWaardenCalculator.vetten(), gerechtWaardenCalculator.koolhydraten());
     }
 }

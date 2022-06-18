@@ -1,3 +1,5 @@
+package App;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -20,9 +22,9 @@ public class Gerecht {
     }
 
     //Als je een naam bv. lasagne meegeeft kijkt zoekGerecht in alleGerechten naar een match.
-    public Gerecht zoekGerecht(String naam) {
+    public static Gerecht zoekGerecht(String naam) {
         for (Gerecht gerecht : getAlleGerechten()) {
-            if (gerecht.getNaam().equals(naam)) {
+            if (gerecht.getNaam().toLowerCase().equals(naam.toLowerCase())) {
                 return gerecht;
             }
         }
@@ -33,7 +35,7 @@ public class Gerecht {
     }
 
     //Bevat alle gerechten en gebruikt de methode zoekIngredient om uit de ingredienten ArrayList een match te vinden om aan het gerecht toe te voegen.
-    public ArrayList<Gerecht> getAlleGerechten() {
+    public static ArrayList<Gerecht> getAlleGerechten() {
         if (alleGerechten.size() == 0) {
             //Collections is voor het beheren van lijsten
             //pasta gerechten

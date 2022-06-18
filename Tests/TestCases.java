@@ -1,14 +1,14 @@
+import App.GerechtInformatie;
+import App.PastaGerecht;
+import App.Pizza;
+import App.VegetarischGerecht;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-
-import java.io.ByteArrayInputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
 class TestClass {
-  
+
    @Test
    public void testGerechten() {
        PastaGerecht pastaGerecht = new PastaGerecht("testLasagne", "Pasta-gerecht", 1.00);

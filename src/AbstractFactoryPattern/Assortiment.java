@@ -2,11 +2,14 @@ package AbstractFactoryPattern;
 
 import AbstractFactoryPattern.BurgerKing.BurgerKingFactory;
 import AbstractFactoryPattern.McDonalds.McDonaldsFactory;
+import App.Gerecht;
+
 
 import java.util.ArrayList;
 
 public class Assortiment {
     private final ArrayList<Producten> producten = new ArrayList<>();
+    private final ArrayList<Gerecht> gerechten = new ArrayList<>();
 
     public Assortiment() {
         producten.add(new Producten(McDonaldsFactory.mcDonaldsBurger.getName(), McDonaldsFactory.mcDonaldsBurger.getPrijs(), McDonaldsFactory.mcDonaldsBurger.getSpecialeActie()));

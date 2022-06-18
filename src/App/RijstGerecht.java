@@ -1,4 +1,6 @@
-class RijstGerecht extends GerechtVerwerker {
+package App;
+
+public class RijstGerecht extends GerechtVerwerker {
     public RijstGerecht(String name, String type, double prijs) {
         super(name, type, prijs);
     }

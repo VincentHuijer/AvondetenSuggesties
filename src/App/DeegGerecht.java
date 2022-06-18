@@ -1,6 +1,7 @@
-class PastaGerecht extends GerechtVerwerker {
+package App;
 
-    public PastaGerecht(String name, String type, Double prijs) {
+public class DeegGerecht extends GerechtVerwerker {
+    public DeegGerecht(String name, String type, double prijs) {
         super(name, type, prijs);
     }
 
@@ -19,5 +20,4 @@ class PastaGerecht extends GerechtVerwerker {
         return prijs * 1.21;
     }
 }
-
 
