@@ -1,3 +1,5 @@
+package PizzaMenu;
+
 public class PizzaKeuzemenuInputsVerwerken {
     public String grootte;
     public String vleesOpPizza;

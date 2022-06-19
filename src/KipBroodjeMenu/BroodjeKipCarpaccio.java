@@ -1,9 +1,9 @@
-package TemplateMethodPattern;
+package KipBroodjeMenu;
 
-public class BroodjeKipGyros extends KipBroodjes {
-    String[] vlees = {"kip Gyros"};
-    String[] groente = {"sla", "augurk", "ui"};
-    String[] saus = {"Knoflooksaus"};
+public class BroodjeKipCarpaccio extends KipBroodjes {
+    String[] vlees = {"Rundercarpaccio", "kiprollade"};
+    String[] groente = {"sla", "zwaardherik"};
+    String[] saus = {"pesto", "romano"};
 
     @Override
     public void addVlees() {
@@ -12,7 +12,6 @@ public class BroodjeKipGyros extends KipBroodjes {
             System.out.println(vlees + " ");
         }
     }
-
 
     @Override
     public void addGroente() {
@@ -33,6 +32,6 @@ public class BroodjeKipGyros extends KipBroodjes {
 
     @Override
     public String getName() {
-        return "Broodje KipGyros";
+        return "Broodje Carpaccio";
     }
 }

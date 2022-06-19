@@ -1,4 +1,4 @@
-package TemplateMethodPattern;
+package KipBroodjeMenu;
 
 public abstract class KipBroodjes {
     public void kipBroodjeSamenstellen() {

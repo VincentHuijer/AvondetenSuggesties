@@ -1,4 +1,4 @@
-package TemplateMethodPattern;
+package KipBroodjeMenu;
 
 import java.util.ArrayList;
 import java.util.Scanner;

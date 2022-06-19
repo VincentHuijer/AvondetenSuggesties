@@ -28,7 +28,7 @@ public class GerechtKeuzemenuSeeder {
             gerechten.add(new RijstGerecht("Nasi", "rijst", 7.32));
             gerechten.add(new RijstGerecht("Kip-Tandoori", "rijst", 3.21));
             //deeg
-            gerechten.add(new DeegGerecht("Pizza", "deeg", 2.43));
+            gerechten.add(new DeegGerecht("PizzaMenu.Pizza", "deeg", 2.43));
             gerechten.add(new DeegGerecht("Spinazietaart", "deeg", 2.41));
             gerechten.add(new DeegGerecht("Burritos", "deeg", 2.74));
             gerechten.add(new DeegGerecht("Quiche", "deeg", 3.53));

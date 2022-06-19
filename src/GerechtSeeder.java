@@ -92,7 +92,7 @@ public class GerechtSeeder {
                     Ingredient.zoekIngredient("zout"),
                     Ingredient.zoekIngredient("peper"));
             //deeg
-            Collections.addAll(new Gerecht("Pizza", new ArrayList<>()).getIngredienten(),
+            Collections.addAll(new Gerecht("PizzaMenu.Pizza", new ArrayList<>()).getIngredienten(),
                     Ingredient.zoekIngredient("deeg"),
                     Ingredient.zoekIngredient("tarweBloem"),
                     Ingredient.zoekIngredient("olijfolie"),

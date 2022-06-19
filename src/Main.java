@@ -1,5 +1,6 @@
-import AbstractFactoryPattern.FactoryKeuzemenu;
-import TemplateMethodPattern.KipBroodjeKeuzemenu;
+import FastFoodMenu.Menu.FastfoodMenus;
+import KipBroodjeMenu.KipBroodjeKeuzemenu;
+import PizzaMenu.PizzaKeuzemenu;
 
 import java.util.Scanner;
 
@@ -16,6 +17,6 @@ class Main {
         if (keuze.equals("1")) new GerechtKeuzemenu();
         if (keuze.equals("2")) new PizzaKeuzemenu();
         if (keuze.equals("3")) new KipBroodjeKeuzemenu();
-        if (keuze.equals("4")) new FactoryKeuzemenu();
+        if (keuze.equals("4")) new FastfoodMenus();
     }
 }
