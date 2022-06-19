@@ -20,6 +20,6 @@ public class Gerecht {
     }
     public ArrayList<Ingredient> getIngredienten() {
         return ingredienten;
-    }     //Bevat alle gerechten en gebruikt de methode zoekIngredient om uit de ingredienten ArrayList een match te vinden om aan het gerecht toe te voegen.
+    }
 }
 

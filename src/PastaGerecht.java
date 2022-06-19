@@ -19,5 +19,3 @@ class PastaGerecht extends GerechtVerwerker {
         return prijs * 1.21;
     }
 }
-
-

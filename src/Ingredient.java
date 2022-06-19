@@ -16,7 +16,6 @@ public class Ingredient {
         this.groente = groente;
     }
 
-
     public String getNaam() {
         return naam;
     }

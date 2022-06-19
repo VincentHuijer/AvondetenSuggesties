@@ -12,7 +12,7 @@ class Main {
                         "1. Suggesties voor het zelf bereiden van avondeten.\n" +
                         "2. Suggesties voor pizza bestellen.\n" +
                         "3. Suggesties voor Rooster broodjes bestellen.\n" +
-                        "4. Suggesties voor McDonalds of Burger King bestellen.");
+                        "4. Suggesties voor een menu bestellen.");
         String keuze = scanner.nextLine();
         if (keuze.equals("1")) new GerechtKeuzemenu();
         if (keuze.equals("2")) new PizzaKeuzemenu();

@@ -5,8 +5,7 @@ public class VoedingswaardenCalculator {
         this.gerecht = gerecht;
     }
 
-    //telt eiwitten van alle ingredienten van een gerecht
-    public double eiwitten() {
+    public double eiwitten() {    //telt eiwitten van alle ingredienten van een gerecht
         double eiwittenTeller = 0;
 
         for (int i = 0; i < gerecht.getIngredienten().size(); i++) {
@@ -15,8 +14,7 @@ public class VoedingswaardenCalculator {
         return eiwittenTeller;
     }
 
-    //telt koolhydraten van alle ingredienten van een gerecht
-    public double koolhydraten() {
+    public double koolhydraten() {//telt koolhydraten van alle ingredienten van een gerecht
         double koolhydratenTeller = 0;
 
         for (int i = 0; i < gerecht.getIngredienten().size(); i++) {
@@ -25,8 +23,7 @@ public class VoedingswaardenCalculator {
         return koolhydratenTeller;
     }
 
-    //telt vetten van alle ingredienten van een gerecht
-    public double vetten() {
+    public double vetten() { //telt vetten van alle ingredienten van een gerecht
         double vettenTeller = 0;
 
         for (int i = 0; i < gerecht.getIngredienten().size(); i++) {
@@ -35,8 +32,7 @@ public class VoedingswaardenCalculator {
         return vettenTeller;
     }
 
-    //controleert door de ingredienten van een gerecht of het groente bevat
-    public boolean bevatGroente() {
+    public boolean bevatGroente() { //controleert door de ingredienten van een gerecht of het groente bevat
         for (int i = 0; i < gerecht.getIngredienten().size(); i++) {
             if (gerecht.getIngredienten().get(i).isGroente()) {
                 return true;
