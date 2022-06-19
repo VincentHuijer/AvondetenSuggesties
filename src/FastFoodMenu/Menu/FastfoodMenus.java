@@ -23,8 +23,4 @@ public class FastfoodMenus {
         int menuKeuze = scanner.nextInt();
         return menus.get(menuKeuze - 1);
     }
-
-    public static void main(String[] args) {
-
-    }
 }
