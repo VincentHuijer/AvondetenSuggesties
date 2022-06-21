@@ -16,7 +16,7 @@ class Main {
         String keuze = scanner.nextLine();
         if (keuze.equals("1")) new GerechtKeuzemenu();
         if (keuze.equals("2")) new PizzaKeuzemenu();
-        if (keuze.equals("3")) new KipBroodjeKeuzemenu();
-        if (keuze.equals("4")) new FastfoodMenus();
+        if (keuze.equals("3")) new KipBroodjeKeuzemenu(); //KipBroodjeKeuzemenu bevat Template Method pattern
+        if (keuze.equals("4")) new FastfoodMenus(); //FastFoodmenu bevat mijn Abstract Factory Pattern
     }
 }
